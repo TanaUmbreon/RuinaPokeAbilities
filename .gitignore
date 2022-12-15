@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# カスタム設定
+Lib/*.dll
+/PokeAbilities/
