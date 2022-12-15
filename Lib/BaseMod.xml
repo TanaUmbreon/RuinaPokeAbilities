@@ -1,0 +1,2426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>BaseMod</name>
+  </assembly>
+  <members>
+    <member name="T:BaseMod.BaseModInitialize">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.BaseModInitialize.OnInitializeMod">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.BaseModInitializer">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.BaseModInitializer.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.BaseModInitializer.OnInitializeMod">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.BuffExtension">
+      <summary>状態 (<see cref="T:BattleUnitBuf" /> クラスおよび <see cref="T:BattleUnitBufListDetail" /> クラス) に対する拡張メソッドを提供します。</summary>
+    </member>
+    <member name="M:BaseMod.BuffExtension.AddBufByCard(BattleUnitBufListDetail,BattleUnitBuf,System.Int32,BattleUnitModel,BufReadyType)">
+      <summary>指定した状態を、指定した数だけ、指定した行動キャラクターによるものとして、指定した幕に付与します。このメソッドはバトル ページの効果により付与するものとして扱います。</summary>
+      <param name="unitBufListDetail">状態を付与する対象キャラクターの状態リスト。</param>
+      <param name="buf">付与する状態。</param>
+      <param name="stack">状態の付与数。</param>
+      <param name="actor">状態の付与元となる行動キャラクター。null の場合は状態を付与する対象キャラクターが指定されます。</param>
+      <param name="readyType">状態を付与する幕。</param>
+      <returns>付与した後の状態への参照。<paramref name="buf" /> が null の場合は null。</returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.AddBufByCard``1(BattleUnitBufListDetail,System.Int32,BattleUnitModel,BufReadyType)">
+      <summary>指定した型の状態を、指定した数だけ、指定した行動キャラクターによるものとして、指定した幕に付与します。このメソッドはバトル ページの効果により付与するものとして扱います。</summary>
+      <typeparam name="T">パラメーターなしのデフォルト コンストラクタを持ち、かつ <see cref="T:BattleUnitBuf" /> クラスを継承した状態の型。</typeparam>
+      <param name="unitBufListDetail">状態を付与する対象キャラクターの状態リスト。</param>
+      <param name="stack">状態の付与数。</param>
+      <param name="actor">状態の付与元となる行動キャラクター。null の場合は状態を付与する対象キャラクターが指定されます。</param>
+      <param name="readyType">状態を付与する幕。</param>
+      <returns>付与した後の状態への参照。</returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.AddBufByEtc(BattleUnitBufListDetail,BattleUnitBuf,System.Int32,BattleUnitModel,BufReadyType)">
+      <summary>指定した状態を、指定した数だけ、指定した行動キャラクターによるものとして、指定した幕に付与します。このメソッドはバトル ページ以外 (パッシブ、幻想体ページなど) の効果により付与するものとして扱います。</summary>
+      <param name="unitBufListDetail">状態を付与する対象キャラクターの状態リスト。</param>
+      <param name="buf">付与する状態。</param>
+      <param name="stack">状態の付与数。</param>
+      <param name="actor">状態の付与元となる行動キャラクター。null の場合は状態を付与する対象キャラクターが指定されます。</param>
+      <param name="readyType">状態を付与する幕。</param>
+      <returns>付与した後の状態への参照。<paramref name="buf" /> が null の場合は null。</returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.AddBufByEtc``1(BattleUnitBufListDetail,System.Int32,BattleUnitModel,BufReadyType)">
+      <summary>指定した型の状態を、指定した数だけ、指定した行動キャラクターによるものとして、指定した幕に付与します。このメソッドはバトル ページ以外 (パッシブ、幻想体ページなど) の効果により付与するものとして扱います。</summary>
+      <typeparam name="T">パラメーターなしのデフォルト コンストラクタを持ち、かつ <see cref="T:BattleUnitBuf" /> クラスを継承した状態の型。</typeparam>
+      <param name="unitBufListDetail">状態を付与する対象キャラクターの状態リスト。</param>
+      <param name="stack">状態の付与数。</param>
+      <param name="actor">状態の付与元となる行動キャラクター。null の場合は状態を付与する対象キャラクターが指定されます。</param>
+      <param name="readyType">状態を付与する幕。</param>
+      <returns>付与した後の状態への参照。</returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.AddBufStack(BattleUnitBuf,System.Int32,BattleUnitModel,System.Boolean)">
+      <summary></summary>
+      <param name="buf"></param>
+      <param name="stack"></param>
+      <param name="actor"></param>
+      <param name="byCard"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.FindAllBuf``1(BattleUnitBufListDetail,BufReadyType)">
+      <summary></summary>
+      <typeparam name="TResult"></typeparam>
+      <param name="unitBufListDetail"></param>
+      <param name="readyType"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.FindBuf``1(BattleUnitBufListDetail,BufReadyType)">
+      <summary></summary>
+      <typeparam name="TResult"></typeparam>
+      <param name="unitBufListDetail"></param>
+      <param name="readyType"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.FindList(BattleUnitBufListDetail,BufReadyType)">
+      <summary></summary>
+      <param name="unitBufListDetail"></param>
+      <param name="readyType"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.FindMatch(BattleUnitBuf,BufReadyType)">
+      <summary></summary>
+      <param name="buf"></param>
+      <param name="readyType"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.BuffExtension.SetBufStack``1(BattleUnitBufListDetail,System.Int32,BufReadyType)">
+      <summary></summary>
+      <typeparam name="TResult"></typeparam>
+      <param name="unitBufListDetail"></param>
+      <param name="stack"></param>
+      <param name="readyType"></param>
+      <returns></returns>
+    </member>
+    <member name="T:BaseMod.CardBuffExtension">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.CustomGiftAppearance">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.CustomGiftAppearance.CreatedGifts">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.CustomGiftAppearance.GiftArtWork">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.CustomGiftAppearance.inited">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.CustomGiftAppearance.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.CustomGiftAppearance.Awake">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.CustomGiftAppearance.CreateCustomGift(System.String[])">
+      <summary></summary>
+      <param name="array2"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.CustomGiftAppearance.CustomInit(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+    </member>
+    <member name="M:BaseMod.CustomGiftAppearance.GetGiftArtWork">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.CustomGiftAppearance.GetGiftArtWork(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <returns></returns>
+    </member>
+    <member name="T:BaseMod.CustomMapManager">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.CustomMapManager.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.CustomMapManager.CustomInit">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.CustomMapManager.IsMapChangable">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="T:BaseMod.Harmony_Patch">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.ArtWorks">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.AudioClips">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.BookThumb">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.CoreThumbDic">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.CustomBattleDialogModel">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.CustomEffects">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.CustomEffectTypoData">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.CustomEmotionCardAbility">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.CustomGiftPassive">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.CustomMapManager">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.InitWorkshopSkinChangeButton">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.IsModStorySelected">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.isModWorkshopSkin">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.ModEpMatch">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.ModStoryCG">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.ModWorkshopBookIndex">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.ModWorkShopId">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.uiEquipPageCustomizePanel">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.BuildPath(System.String[])">
+      <summary></summary>
+      <param name="paths"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.CopyCharacterMotion(CharacterAppearance,ActionDetail)">
+      <summary></summary>
+      <param name="apprearance"></param>
+      <param name="detail"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.CreateCustomCharacter_new(Workshop.WorkshopSkinData,System.String@,UnityEngine.Transform)">
+      <summary></summary>
+      <param name="workshopSkinData"></param>
+      <param name="resourceName"></param>
+      <param name="characterRotationCenter"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.DiceCardItemModel_GetName_Pre(DiceCardItemModel,System.String@)">
+      <summary></summary>
+      <param name="__instance"></param>
+      <param name="__result"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.FindBaseMap(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.FindBattleDialogueModel(System.String,System.String,System.Boolean)">
+      <summary></summary>
+      <param name="name"></param>
+      <param name="id"></param>
+      <param name="isMod"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.FindEmotionCardAbility(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.FindGiftPassiveAbility(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.GetModStoryCG(LorId,System.String)">
+      <summary></summary>
+      <param name="StageId"></param>
+      <param name="Path"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.GetModWorkshopBookData(System.Int32)">
+      <summary></summary>
+      <param name="i"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.Init">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.LoadAssemblyFiles">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.LoadCustomAppearance(System.String)">
+      <summary></summary>
+      <param name="path"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.LoadModFiles">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Harmony_Patch.LoadedModContents">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Harmony_Patch.LocalizePath">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Harmony_Patch.StaticPath">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Harmony_Patch.StoryPath_Localize">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Harmony_Patch.StoryPath_Static">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.Harmony_Patch.EffectPivot">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.EffectPivot.localEulerAngles">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.EffectPivot.localPosition">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.EffectPivot.localScale">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.EffectPivot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.Harmony_Patch.ModStroyCG">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.ModStroyCG.path">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.Harmony_Patch.ModStroyCG.sprite">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Harmony_Patch.ModStroyCG.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.LocalizedTextLoader_New">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.ExportOriginalFiles">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.ExportOringalLocalizeFile(System.String)">
+      <summary></summary>
+      <param name="path"></param>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.ExportOthers(System.String)">
+      <summary></summary>
+      <param name="language"></param>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.LoadLocalizeFile_MOD(System.IO.DirectoryInfo)">
+      <summary></summary>
+      <param name="dir"></param>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.LoadLocalizeFile_MOD_Checking(System.IO.DirectoryInfo,System.Collections.Generic.Dictionary{System.String,System.String})">
+      <summary></summary>
+      <param name="dir"></param>
+      <param name="dic"></param>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.LoadModFiles(System.Collections.Generic.List{Mod.ModContent})">
+      <summary></summary>
+      <param name="loadedContents"></param>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.LocalizeTextExport(System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="path"></param>
+      <param name="outpath"></param>
+      <param name="outname"></param>
+    </member>
+    <member name="M:BaseMod.LocalizedTextLoader_New.LocalizeTextExport_str(System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="str"></param>
+      <param name="outpath"></param>
+      <param name="outname"></param>
+    </member>
+    <member name="T:BaseMod.PassiveAbilityExtension">
+      <summary>パッシブ (<see cref="T:BattleUnitPassiveDetail" /> クラス) に対する拡張メソッドを提供します。</summary>
+    </member>
+    <member name="M:BaseMod.PassiveAbilityExtension.FindPassive``1(BattleUnitPassiveDetail)">
+      <summary>指定した型と一致するパッシブを検索し、最初に一致したパッシブを返します。</summary>
+      <typeparam name="T">検索するパッシブの型。</typeparam>
+      <param name="passiveDetail"></param>
+      <returns>検索条件に一致したパッシブ。一致しなかった場合は null。</returns>
+    </member>
+    <member name="M:BaseMod.PassiveAbilityExtension.FindPassives``1(BattleUnitPassiveDetail)">
+      <summary></summary>
+      <typeparam name="T"></typeparam>
+      <param name="passiveDetail"></param>
+      <returns></returns>
+    </member>
+    <member name="T:BaseMod.PatchType">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.PatchType.postfix">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.PatchType.prefix">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.Shortcut">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Shortcut.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Shortcut.#ctor(System.String)">
+      <summary></summary>
+      <param name="path"></param>
+    </member>
+    <member name="M:BaseMod.Shortcut.Load(System.String)">
+      <summary></summary>
+      <param name="fileName"></param>
+    </member>
+    <member name="M:BaseMod.Shortcut.Resolve(System.IntPtr,System.UInt32)">
+      <summary></summary>
+      <param name="hwnd"></param>
+      <param name="flags"></param>
+    </member>
+    <member name="M:BaseMod.Shortcut.Resolve(System.Windows.Forms.IWin32Window)">
+      <summary></summary>
+      <param name="window"></param>
+    </member>
+    <member name="M:BaseMod.Shortcut.Resolve">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Shortcut.Save(System.String)">
+      <summary></summary>
+      <param name="fileName"></param>
+    </member>
+    <member name="P:BaseMod.Shortcut.Arguments">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Shortcut.Description">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Shortcut.HotKey">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Shortcut.Path">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Shortcut.RelativePath">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.Shortcut.WorkingDirectory">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.SimpleMapManager">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.CustomInit">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.EnableMap(System.Boolean)">
+      <summary></summary>
+      <param name="b"></param>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.GetScratch(System.Int32,UnityEngine.Transform)">
+      <summary></summary>
+      <param name="lv"></param>
+      <param name="parent"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.GetWallCrater">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.IsMapChangable">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.OnRoundStart">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.ResetMap">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.SimpleMapManager.SimpleInit(System.String,System.String)">
+      <summary></summary>
+      <param name="Path"></param>
+      <param name="MapName"></param>
+      <returns></returns>
+    </member>
+    <member name="T:BaseMod.SkeletonJSON_new">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.SkeletonJSON_new.linkedMeshes">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.GetBoolean(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Boolean)">
+      <summary></summary>
+      <param name="map"></param>
+      <param name="name"></param>
+      <param name="defaultValue"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.GetFloat(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Single)">
+      <summary></summary>
+      <param name="map"></param>
+      <param name="name"></param>
+      <param name="defaultValue"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.GetFloatArray(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Single)">
+      <summary></summary>
+      <param name="map"></param>
+      <param name="name"></param>
+      <param name="scale"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.GetInt(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Int32)">
+      <summary></summary>
+      <param name="map"></param>
+      <param name="name"></param>
+      <param name="defaultValue"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.GetIntArray(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+      <summary></summary>
+      <param name="map"></param>
+      <param name="name"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.GetString(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.String)">
+      <summary></summary>
+      <param name="map"></param>
+      <param name="name"></param>
+      <param name="defaultValue"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.ReadAnimation(Spine.SkeletonJson,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,Spine.SkeletonData)">
+      <summary></summary>
+      <param name="__instance"></param>
+      <param name="map"></param>
+      <param name="name"></param>
+      <param name="skeletonData"></param>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.ReadAnimation_new(Spine.SkeletonJson,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,Spine.SkeletonData)">
+      <summary></summary>
+      <param name="__instance"></param>
+      <param name="map"></param>
+      <param name="name"></param>
+      <param name="skeletonData"></param>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.ReadAttachment(Spine.SkeletonJson,System.Collections.Generic.Dictionary{System.String,System.Object},Spine.Skin,System.Int32,System.String,Spine.SkeletonData)">
+      <summary></summary>
+      <param name="__instance"></param>
+      <param name="map"></param>
+      <param name="skin"></param>
+      <param name="slotIndex"></param>
+      <param name="name"></param>
+      <param name="skeletonData"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.ReadAttachment_new(Spine.SkeletonJson,System.Collections.Generic.Dictionary{System.String,System.Object},Spine.Skin,System.Int32,System.String,Spine.SkeletonData)">
+      <summary></summary>
+      <param name="__instance"></param>
+      <param name="map"></param>
+      <param name="skin"></param>
+      <param name="slotIndex"></param>
+      <param name="name"></param>
+      <param name="skeletonData"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.ReadCurve(System.Collections.Generic.Dictionary{System.String,System.Object},Spine.CurveTimeline,System.Int32)">
+      <summary></summary>
+      <param name="valueMap"></param>
+      <param name="timeline"></param>
+      <param name="frameIndex"></param>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.ReadVertices(Spine.SkeletonJson,System.Collections.Generic.Dictionary{System.String,System.Object},Spine.VertexAttachment,System.Int32)">
+      <summary></summary>
+      <param name="__instance"></param>
+      <param name="map"></param>
+      <param name="attachment"></param>
+      <param name="verticesLength"></param>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.ToColor(System.String,System.Int32,System.Int32)">
+      <summary></summary>
+      <param name="hexString"></param>
+      <param name="colorIndex"></param>
+      <param name="expectedLength"></param>
+      <returns></returns>
+    </member>
+    <member name="T:BaseMod.SkeletonJSON_new.LinkedMesh">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.SkeletonJSON_new.LinkedMesh.#ctor(Spine.MeshAttachment,System.String,System.Int32,System.String,System.Boolean)">
+      <summary></summary>
+      <param name="mesh"></param>
+      <param name="skin"></param>
+      <param name="slotIndex"></param>
+      <param name="parent"></param>
+      <param name="inheritDeform"></param>
+    </member>
+    <member name="T:BaseMod.StaticDataLoader_New">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportAttackEffectInfo">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportBook">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportCardDropTable">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportCreditInfo">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportDropBook">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportEmotionCard">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportEmotionEgo">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportEnemyUnit">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportFinalRewardInfo">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportFloorInfo">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportFormation">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportGift">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportOriginalFiles">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportPassive">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportQuest">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportResourceInfo">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportStage">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportTitle">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.ExportToolTip">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.LoadModFiles(System.Collections.Generic.List{Mod.ModContent})">
+      <summary></summary>
+      <param name="loadedContents"></param>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.LoadNewTitle(System.String)">
+      <summary></summary>
+      <param name="str"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.StaticDataExport(System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="path"></param>
+      <param name="outpath"></param>
+      <param name="outname"></param>
+    </member>
+    <member name="M:BaseMod.StaticDataLoader_New.StaticDataExport_str(System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="str"></param>
+      <param name="outpath"></param>
+      <param name="outname"></param>
+    </member>
+    <member name="T:BaseMod.StorySerializer_new">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StorySerializer_new.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StorySerializer_new.ExportStory">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.StorySerializer_new.StoryTextExport(System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="path"></param>
+      <param name="outpath"></param>
+      <param name="outname"></param>
+    </member>
+    <member name="M:BaseMod.StorySerializer_new.StoryTextExport_str(System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="str"></param>
+      <param name="outpath"></param>
+      <param name="outname"></param>
+    </member>
+    <member name="T:BaseMod.Tools">
+      <summary>いくつかの便利なメソッドを提供します。</summary>
+    </member>
+    <member name="M:BaseMod.Tools.AddCustomIcon(BattleDiceCardModel,System.String,System.Int32)">
+      <summary></summary>
+      <param name="cardModel"></param>
+      <param name="resName"></param>
+      <param name="priority"></param>
+    </member>
+    <member name="M:BaseMod.Tools.ContainsCategory(BookModel,System.String)">
+      <summary></summary>
+      <param name="book"></param>
+      <param name="category"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.ContainsCategory(BookXmlInfo,System.String)">
+      <summary></summary>
+      <param name="book"></param>
+      <param name="category"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.ContainsCategory(BattleDiceCardModel,System.String)">
+      <summary></summary>
+      <param name="card"></param>
+      <param name="category"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.ContainsCategory(LOR_DiceSystem.DiceCardXmlInfo,System.String)">
+      <summary></summary>
+      <param name="card"></param>
+      <param name="category"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.DrawCardSpecified(BattleAllyCardDetail,System.Predicate{BattleDiceCardModel})">
+      <summary></summary>
+      <param name="cardDetail"></param>
+      <param name="match"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.ExhaustCardAnyWhere(BattleAllyCardDetail,BattleDiceCardModel)">
+      <summary></summary>
+      <param name="cardDetail"></param>
+      <param name="card"></param>
+    </member>
+    <member name="M:BaseMod.Tools.GetAudio(System.String)">
+      <summary></summary>
+      <param name="path"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.GetAudio(System.String,System.String)">
+      <summary></summary>
+      <param name="path"></param>
+      <param name="Name"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.GetModId(System.Reflection.Assembly)">
+      <summary></summary>
+      <param name="callingAssembly"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.Load``1(System.String)">
+      <summary></summary>
+      <typeparam name="T"></typeparam>
+      <param name="key"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.MakeLorId(System.Int32)">
+      <summary></summary>
+      <param name="id"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.Tools.Save``1(``0,System.String)">
+      <summary></summary>
+      <typeparam name="T"></typeparam>
+      <param name="value"></param>
+      <param name="key"></param>
+    </member>
+    <member name="M:BaseMod.Tools.SetAbilityData(BattleCardBehaviourResult,EffectTypoData)">
+      <summary></summary>
+      <param name="battleCardBehaviourResult"></param>
+      <param name="effectTypoData"></param>
+    </member>
+    <member name="M:BaseMod.Tools.SetAlarmText(System.String,UI.UIAlarmButtonType,UI.ConfirmEvent,System.Object[])">
+      <summary>指定したテキストを表示するポップアップ ウィンドウを作成します。</summary>
+      <param name="alarmtype">表示するテキストの ID。</param>
+      <param name="btnType">表示するボタンの種類。省略した場合は OK ボタンを使用します。</param>
+      <param name="confirmFunc">OK ボタンをクリックした時に呼び出される (?) イベント。省略した場合は null。</param>
+      <param name="args">テキスト本文で使用されるプレース ホルダーを置き換える値の配列。</param>
+    </member>
+    <member name="T:BaseMod.Tools.Test`1">
+      <summary></summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="F:BaseMod.Tools.Test`1.value">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.Tools.Test`1.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.UIPanelTool">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.UIPanelTool.IsDebug">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.UIPanelTool.这个是注译">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.DoSetParent(UnityEngine.Transform,UnityEngine.Transform)">
+      <summary></summary>
+      <param name="Target"></param>
+      <param name="transform"></param>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetBattleResultPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetBattleSettingPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetBattleStoryPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetBookPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetCardDeckPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetCardEquipInfoPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetCardPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetControlButtonPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetCurtainPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetDecorationsPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetDUMMYPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetEnemyCharacterListPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetEquipInvenPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetEquipPageInventoryPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetFilterPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetFloorPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetInvitationPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetLibrarianCharacterListPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetLibrarianInfoPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetMainPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetSephirahButton(SephirahType)">
+      <summary></summary>
+      <param name="sephirahType"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetStoryArchivesPanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetTitlePanel">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetTransform(System.String)">
+      <summary></summary>
+      <param name="input"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.GetUIPanel``1(UI.UIPanelType)">
+      <summary></summary>
+      <typeparam name="T"></typeparam>
+      <param name="type"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UIPanelTool.SetParent(UnityEngine.Transform,System.String)">
+      <summary></summary>
+      <param name="Target"></param>
+      <param name="input"></param>
+    </member>
+    <member name="T:BaseMod.UtilTools">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.UtilTools.DefFont">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.UtilTools.DefFont_TMP">
+      <summary></summary>
+    </member>
+    <member name="F:BaseMod.UtilTools.DefFontColor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.UtilTools.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.UtilTools.AddButton(UnityEngine.UI.Image)">
+      <summary></summary>
+      <param name="target"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CopyDir(System.String,System.String)">
+      <summary></summary>
+      <param name="srcPath"></param>
+      <param name="aimPath"></param>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateButton(UnityEngine.Transform,System.String,UnityEngine.Vector2,UnityEngine.Vector2)">
+      <summary></summary>
+      <param name="parent"></param>
+      <param name="Imagepath"></param>
+      <param name="scale"></param>
+      <param name="position"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateButton(UnityEngine.Transform,UnityEngine.Sprite,UnityEngine.Vector2,UnityEngine.Vector2)">
+      <summary></summary>
+      <param name="parent"></param>
+      <param name="Image"></param>
+      <param name="scale"></param>
+      <param name="position"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateButton(UnityEngine.Transform,System.String)">
+      <summary></summary>
+      <param name="parent"></param>
+      <param name="Imagepath"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateImage(UnityEngine.Transform,System.String,UnityEngine.Vector2,UnityEngine.Vector2)">
+      <summary></summary>
+      <param name="parent"></param>
+      <param name="Imagepath"></param>
+      <param name="scale"></param>
+      <param name="position"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateImage(UnityEngine.Transform,UnityEngine.Sprite,UnityEngine.Vector2,UnityEngine.Vector2)">
+      <summary></summary>
+      <param name="parent"></param>
+      <param name="Image"></param>
+      <param name="scale"></param>
+      <param name="position"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateInputField(UnityEngine.Transform,System.String,UnityEngine.Vector2,UnityEngine.TextAnchor,System.Int32,UnityEngine.Color,UnityEngine.Font)">
+      <summary></summary>
+      <param name="parent"></param>
+      <param name="Imagepath"></param>
+      <param name="position"></param>
+      <param name="tanchor"></param>
+      <param name="fsize"></param>
+      <param name="tcolor"></param>
+      <param name="font"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateShortcut(System.String,System.String,System.String,System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="shortcutDirectory"></param>
+      <param name="shortcutName"></param>
+      <param name="targetPath"></param>
+      <param name="targetDirectory"></param>
+      <param name="description"></param>
+      <param name="iconLocation"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateText(UnityEngine.Transform,UnityEngine.Vector2,System.Int32,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.TextAnchor,UnityEngine.Color,UnityEngine.Font)">
+      <summary></summary>
+      <param name="target"></param>
+      <param name="position"></param>
+      <param name="fsize"></param>
+      <param name="anchormin"></param>
+      <param name="anchormax"></param>
+      <param name="anchorposition"></param>
+      <param name="anchor"></param>
+      <param name="tcolor"></param>
+      <param name="font"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateText(UnityEngine.Transform)">
+      <summary></summary>
+      <param name="target"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.CreateText_TMP(UnityEngine.Transform,UnityEngine.Vector2,System.Int32,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,TMPro.TextAlignmentOptions,UnityEngine.Color,TMPro.TMP_FontAsset)">
+      <summary></summary>
+      <param name="target"></param>
+      <param name="position"></param>
+      <param name="fsize"></param>
+      <param name="anchormin"></param>
+      <param name="anchormax"></param>
+      <param name="anchorposition"></param>
+      <param name="anchor"></param>
+      <param name="tcolor"></param>
+      <param name="font"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.DeepCopyGameObject(UnityEngine.Transform,UnityEngine.Transform)">
+      <summary></summary>
+      <param name="original"></param>
+      <param name="copyed"></param>
+    </member>
+    <member name="M:BaseMod.UtilTools.DuplicateEquipPageSlot(UI.UIOriginEquipPageSlot,UI.UIOriginEquipPageList)">
+      <summary></summary>
+      <param name="origin"></param>
+      <param name="parent"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.FindExistDir(System.String)">
+      <summary></summary>
+      <param name="path"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.GetTransform(System.String)">
+      <summary></summary>
+      <param name="input"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.GetTransformPath(UnityEngine.Transform,System.Boolean)">
+      <summary></summary>
+      <param name="transform"></param>
+      <param name="includeSelf"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.LoadFromSaveData_GiftInventory(GiftInventory,GameSave.SaveData)">
+      <summary></summary>
+      <param name="__instance"></param>
+      <param name="data"></param>
+    </member>
+    <member name="M:BaseMod.UtilTools.RenderCam_2(System.Int32,UI.UICharacterRenderer)">
+      <summary></summary>
+      <param name="index"></param>
+      <param name="renderer"></param>
+      <returns></returns>
+    </member>
+    <member name="M:BaseMod.UtilTools.SpriteTrace(System.String,UnityEngine.Sprite)">
+      <summary></summary>
+      <param name="path"></param>
+      <param name="sprite"></param>
+    </member>
+    <member name="P:BaseMod.UtilTools._DefFont">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.UtilTools._DefFontColor">
+      <summary></summary>
+    </member>
+    <member name="T:BaseMod.WAV">
+      <summary></summary>
+    </member>
+    <member name="M:BaseMod.WAV.#ctor(System.String)">
+      <summary></summary>
+      <param name="filename"></param>
+    </member>
+    <member name="M:BaseMod.WAV.#ctor(System.Byte[])">
+      <summary></summary>
+      <param name="wav"></param>
+    </member>
+    <member name="M:BaseMod.WAV.ToString">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="P:BaseMod.WAV.ChannelCount">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.WAV.Frequency">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.WAV.LeftChannel">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.WAV.RightChannel">
+      <summary></summary>
+    </member>
+    <member name="P:BaseMod.WAV.SampleCount">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.AbCardSelectorSizePatch">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.AbCardSelectorSizePatch.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.CharacterNameInputInjector">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.CharacterNameInputInjector.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.CharacterNameOutputInjector">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.CharacterNameOutputInjector.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.CustomAppearancePrefabPatch">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.CustomAppearancePrefabPatch.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.CustomProjectionLoadPatch">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.CustomProjectionLoadPatch.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.ExtendedClothCustomizeData">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData._backSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData._backSprite">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData._frontSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData._skinSprite">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.additionalPivots">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.backSkinSpritePath">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.backSpritePath">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.frontSkinSpritePath">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.hasBackSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.hasBackSprite">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.hasFrontSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.hasSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.isCustomSize">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.resolution">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.size">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedClothCustomizeData.skinSpritePath">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.ExtendedClothCustomizeData.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.ExtendedClothCustomizeData.LoadBackSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.ExtendedClothCustomizeData.LoadBackSprite">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.ExtendedClothCustomizeData.LoadFrontSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.ExtendedClothCustomizeData.LoadSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="P:ExtendedLoader.ExtendedClothCustomizeData.backSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="P:ExtendedLoader.ExtendedClothCustomizeData.backSprite">
+      <summary></summary>
+    </member>
+    <member name="P:ExtendedLoader.ExtendedClothCustomizeData.frontSkinSprite">
+      <summary></summary>
+    </member>
+    <member name="P:ExtendedLoader.ExtendedClothCustomizeData.skinSprite">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.ExtendedWorkshopAppearanceInfo">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedWorkshopAppearanceInfo.atkEffectPivotDic">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedWorkshopAppearanceInfo.motionSoundList">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedWorkshopAppearanceInfo.specialMotionPivotDic">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.ExtendedWorkshopAppearanceInfo.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.ExtendedWorkshopSkinData">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedWorkshopSkinData.atkEffectPivotDic">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedWorkshopSkinData.motionSoundList">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.ExtendedWorkshopSkinData.specialMotionPivotDic">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.ExtendedWorkshopSkinData.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.GenderInjector">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.GenderInjector.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.GiftOrderPatch">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.GiftOrderPatch.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.LorName">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.LorName.BASEMOD_ID">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.LorName.name">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.LorName.NAME_SEPARATOR">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.LorName.None">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.LorName.packageId">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.LorName.#ctor(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+    </member>
+    <member name="M:ExtendedLoader.LorName.#ctor(System.String,System.Boolean)">
+      <summary></summary>
+      <param name="name"></param>
+      <param name="isGenericCustom"></param>
+    </member>
+    <member name="M:ExtendedLoader.LorName.#ctor(System.String,System.String)">
+      <summary></summary>
+      <param name="packageId"></param>
+      <param name="name"></param>
+    </member>
+    <member name="M:ExtendedLoader.LorName.CompareTo(ExtendedLoader.LorName)">
+      <summary></summary>
+      <param name="other"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.Compress">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.Equals(System.Object)">
+      <summary></summary>
+      <param name="obj"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.Equals(ExtendedLoader.LorName)">
+      <summary></summary>
+      <param name="other"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.Equals(System.String)">
+      <summary></summary>
+      <param name="other"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.GetHashCode">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.GetSaveData">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.InitializeLorNames(System.Collections.Generic.List{ExtendedLoader.LorNameXml},System.Collections.Generic.List{ExtendedLoader.LorName},System.String)">
+      <summary></summary>
+      <param name="src"></param>
+      <param name="dst"></param>
+      <param name="defaultPid"></param>
+    </member>
+    <member name="M:ExtendedLoader.LorName.IsBasic">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.IsBasicId(System.String)">
+      <summary></summary>
+      <param name="packageId"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.IsCompressed(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.IsModId(System.String)">
+      <summary></summary>
+      <param name="packageId"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.IsNone">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.IsWorkshop">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.LoadFromSaveData(GameSave.SaveData)">
+      <summary></summary>
+      <param name="data"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.MakeLorName(ExtendedLoader.LorNameXml,System.String)">
+      <summary></summary>
+      <param name="src"></param>
+      <param name="defaultPid"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.LorName.ToString">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="T:ExtendedLoader.LorNameXml">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.LorNameXml.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.LorNameXml.#ctor(System.String,System.String)">
+      <summary></summary>
+      <param name="pid"></param>
+      <param name="name"></param>
+    </member>
+    <member name="P:ExtendedLoader.LorNameXml.pid">
+      <summary></summary>
+    </member>
+    <member name="P:ExtendedLoader.LorNameXml.xmlName">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.SkinChangeExtensions">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ChangeCreatureSkin(BattleUnitView,ExtendedLoader.LorName)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="creatureName"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ChangeCreatureSkinWorkshop(BattleUnitView,System.String)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="creatureName"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ChangeEgoSkin(BattleUnitView,ExtendedLoader.LorName,System.Boolean)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="egoName"></param>
+      <param name="bookNameChange"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ChangeEgoSkinWorkshop(BattleUnitView,System.String,System.Boolean)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="egoName"></param>
+      <param name="bookNameChange"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ChangeSkin(BattleUnitView,ExtendedLoader.LorName)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="charName"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ChangeSkinByModSkinInfo(BattleUnitView,ExtendedLoader.SkinChangeExtensions.ModSkinInfo,System.Boolean)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="info"></param>
+      <param name="forceChange"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ChangeSkinBySkinInfo(BattleUnitView,BattleUnitView.SkinInfo,System.Boolean)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="skinInfo"></param>
+      <param name="forceChange"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ChangeSkinWorkshop(BattleUnitView,System.String)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="skinName"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.GetCurrentModSkinInfo(BattleUnitView)">
+      <summary></summary>
+      <param name="view"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.GetOriginalSkin(BattleUnitModel)">
+      <summary></summary>
+      <param name="model"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.GetThumbSprite(Workshop.WorkshopSkinData)">
+      <summary></summary>
+      <param name="data"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.GetWorkshopBookSkinData(CustomizingBookSkinLoader,System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="loader"></param>
+      <param name="id"></param>
+      <param name="name"></param>
+      <param name="gender"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.GetWorkshopBookSkinData(CustomizingBookSkinLoader,ExtendedLoader.LorName,System.String)">
+      <summary></summary>
+      <param name="loader"></param>
+      <param name="name"></param>
+      <param name="gender"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.SetAltSkin(BattleUnitView,ExtendedLoader.LorName)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="skinName"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.SetAltSkinWorkshop(BattleUnitView,System.String)">
+      <summary></summary>
+      <param name="view"></param>
+      <param name="skinName"></param>
+    </member>
+    <member name="T:ExtendedLoader.SkinChangeExtensions.ModSkinInfo">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.SkinChangeExtensions.ModSkinInfo.lorName">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.SkinChangeExtensions.ModSkinInfo.packageId">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ModSkinInfo.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ModSkinInfo.#ctor(BattleUnitView.SkinInfo)">
+      <summary></summary>
+      <param name="skinInfo"></param>
+    </member>
+    <member name="M:ExtendedLoader.SkinChangeExtensions.ModSkinInfo.Compress">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="T:ExtendedLoader.SkinPartRenderer">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.SkinPartRenderer.frontSkin">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.SkinPartRenderer.rearest">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.SkinPartRenderer.rearestSkin">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.SkinPartRenderer.rearSkin">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.SkinPartRenderer.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.SpriteUtilExtension">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.SpriteUtilExtension.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.SpriteUtilExtension.LoadCustomSizedPivotSprite(System.String,UnityEngine.Vector2,UnityEngine.Vector2Int,System.Single)">
+      <summary></summary>
+      <param name="filePath"></param>
+      <param name="pivot"></param>
+      <param name="size"></param>
+      <param name="resolution"></param>
+      <returns></returns>
+    </member>
+    <member name="T:ExtendedLoader.ThumbPatch">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.ThumbPatch.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.UIWorkshopSkinDataSetter">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.UIWorkshopSkinDataSetter.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.VanillaSkinCopyPatch">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.VanillaSkinCopyPatch.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.WorkshopSetterPatch">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.WorkshopSetterPatch.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ExtendedLoader.XLRoot">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.XLRoot.CustomAppearancePrefab">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.XLRoot.persistentRoot">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.XLRoot.SkinThumb">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.XLRoot.THUMB_LAYER">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.XLRoot.THUMB_MASK">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.XLRoot.thumbRenderers">
+      <summary></summary>
+    </member>
+    <member name="F:ExtendedLoader.XLRoot.UICustomAppearancePrefab">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.XLRoot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:ExtendedLoader.XLRoot.MakeThumbnail(Workshop.ClothCustomizeData)">
+      <summary></summary>
+      <param name="data"></param>
+      <returns></returns>
+    </member>
+    <member name="P:ExtendedLoader.XLRoot.ThumbCamera">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.BattleDialogCharacter_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogCharacter_New.bookId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogCharacter_New.characterID">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogCharacter_New.characterName">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogCharacter_New.dialogTypeList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogCharacter_New.workshopId">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.BattleDialogCharacter_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="P:GTMDProjectMoon.BattleDialogCharacter_New.id">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.BattleDialogRelationRoot">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogRelationRoot.list">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.BattleDialogRelationRoot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.BattleDialogRelationWithBookID_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogRelationWithBookID_New.bookID">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogRelationWithBookID_New.characterID">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogRelationWithBookID_New.groupName">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogRelationWithBookID_New.storyID">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogRelationWithBookID_New.workshopId">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.BattleDialogRelationWithBookID_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.BattleDialogRoot">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogRoot.characterList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BattleDialogRoot.groupName">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.BattleDialogRoot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.BookEquipEffect_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New._PassiveList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.AddedStartDraw">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.Break">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.CardList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.DeadLine">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.HBResist">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.Hp">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.HpReduction">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.HResist">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.MaxPlayPoint">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.OnlyCard">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.PassiveCost">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.PassiveList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.PBResist">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.PResist">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.SBResist">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.Speed">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.SpeedDiceNum">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.SpeedMin">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.SResist">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookEquipEffect_New.StartPlayPoint">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.BookEquipEffect_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.BookSoulCardInfo_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookSoulCardInfo_New.cardId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookSoulCardInfo_New.emotionLevel">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookSoulCardInfo_New.requireLevel">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookSoulCardInfo_New.WorkshopId">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.BookSoulCardInfo_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.BookXmlInfo_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New._bookIcon">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New._id">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.canNotEquip">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.categoryList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.Chapter">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.CharacterSkin">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.customCategoryList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.episode">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.EquipEffect">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.gender">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.InnerName">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.isError">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.motionSoundList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.optionList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.RandomFace">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.RangeType">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.Rarity">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.remainRewardValue">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.skinType">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.speedDiceNumber">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.SuccessionPossibleNumber">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.TextId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlInfo_New.workshopID">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.BookXmlInfo_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.BookXmlRoot">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlRoot.bookXmlList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.BookXmlRoot.version">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.BookXmlRoot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.DiceCardXmlInfo_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.DiceCardXmlInfo_New.customCategory">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.DiceCardXmlInfo_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.DiceCardXmlRoot">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.DiceCardXmlRoot.cardXmlList">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.DiceCardXmlRoot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.EgoCardDetail">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EgoCardDetail._CardId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EgoCardDetail.id">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EgoCardDetail.isLock">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EgoCardDetail.Sephirah">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.EgoCardDetail.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.EmotionEgoXmlInfo_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EmotionEgoXmlInfo_New._CardId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EmotionEgoXmlInfo_New.id">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EmotionEgoXmlInfo_New.isLock">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EmotionEgoXmlInfo_New.Sephirah">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.EmotionEgoXmlInfo_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.EmotionEgoXmlRoot">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EmotionEgoXmlRoot.egoXmlList">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.EmotionEgoXmlRoot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.EnemyDropItem_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyDropItem_New.bookId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyDropItem_New.prob">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyDropItem_New.workshopId">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.EnemyDropItem_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.EnemyDropItem_ReNew">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyDropItem_ReNew.bookId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyDropItem_ReNew.prob">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.EnemyDropItem_ReNew.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.EnemyDropItemTable_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyDropItemTable_New.dropItemList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyDropItemTable_New.dropList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyDropItemTable_New.emotionLevel">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.EnemyDropItemTable_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.EnemyUnitClassInfo_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New._id">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.AiScript">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.bodyId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.bookId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.dropBonus">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.dropTableList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.emotionCardList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.exp">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.faceType">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.gender">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.height">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.isUnknown">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.maxHeight">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.minHeight">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.name">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.nameId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.retreat">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassInfo_New.workshopID">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.EnemyUnitClassInfo_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="P:GTMDProjectMoon.EnemyUnitClassInfo_New.id">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.EnemyUnitClassRoot">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.EnemyUnitClassRoot.list">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.EnemyUnitClassRoot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.OrcTools">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.BookCategoryDic">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.CharacterNameDic">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.dialogDetails">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.DropItemDic">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.EgoDic">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.EpisodeDic">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.maxBookCategory">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.OnlyCardDic">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.SoulCardDic">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.StageConditionDic">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.StageNameDic">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.CopyBattleDialogRelation(System.Collections.Generic.List{LOR_XML.BattleDialogRelationWithBookID},System.Collections.Generic.List{GTMDProjectMoon.BattleDialogRelationWithBookID_New},System.String)">
+      <summary></summary>
+      <param name="BattleDialogRelation"></param>
+      <param name="newinfo"></param>
+      <param name="uniqueId"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.CopyBattleDialogRoot(LOR_XML.BattleDialogRoot,GTMDProjectMoon.BattleDialogRoot,System.String)">
+      <summary></summary>
+      <param name="battleDialogRoot"></param>
+      <param name="newinfo"></param>
+      <param name="uniqueId"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.CopyBookXmlInfo(BookXmlInfo,GTMDProjectMoon.BookXmlInfo_New,System.String)">
+      <summary></summary>
+      <param name="bookXml"></param>
+      <param name="newinfo"></param>
+      <param name="uniqueId"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.CopyDiceCardXmlInfo(LOR_DiceSystem.DiceCardXmlInfo,GTMDProjectMoon.DiceCardXmlInfo_New)">
+      <summary></summary>
+      <param name="info"></param>
+      <param name="newinfo"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.CopyEnemyUnitClassInfo(EnemyUnitClassInfo,GTMDProjectMoon.EnemyUnitClassInfo_New,System.String)">
+      <summary></summary>
+      <param name="enemyUnitClassInfo"></param>
+      <param name="newinfo"></param>
+      <param name="uniqueId"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.CopyStageClassInfo(StageClassInfo,GTMDProjectMoon.StageClassInfo_New,System.String)">
+      <summary></summary>
+      <param name="stageClassInfo"></param>
+      <param name="newinfo"></param>
+      <param name="uniqueId"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.GetBookCategory(System.String)">
+      <summary></summary>
+      <param name="category"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.LoadDefaultBookCategories">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="T:GTMDProjectMoon.OrcTools.DialogDetail">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.DialogDetail.BookId">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.DialogDetail.CharacterID">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.DialogDetail.CharacterName">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.OrcTools.DialogDetail.GroupName">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.DialogDetail.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.DialogDetail.FindDialogInBookID(LorId)">
+      <summary></summary>
+      <param name="id"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.DialogDetail.FindDialogInCharacterID(LorId)">
+      <summary></summary>
+      <param name="id"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.DialogDetail.FindDialogInCharacterName(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <returns></returns>
+    </member>
+    <member name="M:GTMDProjectMoon.OrcTools.DialogDetail.FindDialogInGroupName(System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <returns></returns>
+    </member>
+    <member name="T:GTMDProjectMoon.StageClassInfo_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New._id">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New._rewardList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New._storyType">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.chapter">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.exceptFloorList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.extraCondition">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.floorNum">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.floorOnlyList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.invitationInfo">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.isChapterLast">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.isStageFixedNormal">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.mapInfo">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.rewardList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.stageName">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.stageType">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.storyList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.waveList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageClassInfo_New.workshopID">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.StageClassInfo_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.StageExtraCondition_New">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageExtraCondition_New.needClearStageList">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageExtraCondition_New.needLevel">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageExtraCondition_New.stagecondition">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.StageExtraCondition_New.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.StageXmlRoot">
+      <summary></summary>
+    </member>
+    <member name="F:GTMDProjectMoon.StageXmlRoot.list">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.StageXmlRoot.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:GTMDProjectMoon.WorkshopSkinChangeButton">
+      <summary></summary>
+    </member>
+    <member name="M:GTMDProjectMoon.WorkshopSkinChangeButton.#ctor">
+      <summary></summary>
+    </member>
+    <member name="T:ModSettingTool.InitGameObject">
+      <summary></summary>
+    </member>
+    <member name="M:ModSettingTool.InitGameObject.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:ModSettingTool.InitGameObject.SetAlarmText(System.String,System.Collections.Generic.List{System.String},ModSettingTool.OptionEvent,System.Object[])">
+      <summary></summary>
+      <param name="alarmtype"></param>
+      <param name="Options"></param>
+      <param name="confirmFunc"></param>
+      <param name="args"></param>
+    </member>
+    <member name="T:ModSettingTool.ModSaveTool">
+      <summary></summary>
+    </member>
+    <member name="F:ModSettingTool.ModSaveTool.LoadedModsWorkshopId">
+      <summary></summary>
+    </member>
+    <member name="F:ModSettingTool.ModSaveTool.ModSaveData">
+      <summary></summary>
+    </member>
+    <member name="M:ModSettingTool.ModSaveTool.GetModSaveData(System.String)">
+      <summary></summary>
+      <param name="WorkshopId"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ModSettingTool.ModSaveTool.LoadFromSaveData">
+      <summary></summary>
+    </member>
+    <member name="M:ModSettingTool.ModSaveTool.RemoveUnknownSaves">
+      <summary></summary>
+    </member>
+    <member name="M:ModSettingTool.ModSaveTool.Saveint(System.String,System.Int32,System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <param name="value"></param>
+      <param name="WorkshopId"></param>
+    </member>
+    <member name="M:ModSettingTool.ModSaveTool.SaveModSaveData">
+      <summary></summary>
+    </member>
+    <member name="M:ModSettingTool.ModSaveTool.SaveString(System.String,System.String,System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <param name="value"></param>
+      <param name="WorkshopId"></param>
+    </member>
+    <member name="M:ModSettingTool.ModSaveTool.Saveulong(System.String,System.UInt64,System.String)">
+      <summary></summary>
+      <param name="name"></param>
+      <param name="value"></param>
+      <param name="WorkshopId"></param>
+    </member>
+    <member name="P:ModSettingTool.ModSaveTool.ModSavePath">
+      <summary></summary>
+    </member>
+    <member name="T:ModSettingTool.OptionEvent">
+      <summary></summary>
+    </member>
+    <member name="M:ModSettingTool.OptionEvent.#ctor(System.Object,System.IntPtr)">
+      <summary></summary>
+      <param name="object"></param>
+      <param name="method"></param>
+    </member>
+    <member name="M:ModSettingTool.OptionEvent.BeginInvoke(System.Int32,System.AsyncCallback,System.Object)">
+      <summary></summary>
+      <param name="selection"></param>
+      <param name="callback"></param>
+      <param name="object"></param>
+      <returns></returns>
+    </member>
+    <member name="M:ModSettingTool.OptionEvent.EndInvoke(System.IAsyncResult)">
+      <summary></summary>
+      <param name="result"></param>
+    </member>
+    <member name="M:ModSettingTool.OptionEvent.Invoke(System.Int32)">
+      <summary></summary>
+      <param name="selection"></param>
+    </member>
+    <member name="T:SummonLiberation.ButtonColor">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.ButtonColor.DefaultColor">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.ButtonColor.Image">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.ButtonColor.OnEnterColor">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.ButtonColor.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.ButtonColor.OnPointerEnter(UnityEngine.EventSystems.PointerEventData)">
+      <summary></summary>
+      <param name="eventData"></param>
+    </member>
+    <member name="M:SummonLiberation.ButtonColor.OnPointerExit(UnityEngine.EventSystems.PointerEventData)">
+      <summary></summary>
+      <param name="eventData"></param>
+    </member>
+    <member name="M:SummonLiberation.ButtonColor.OnPointerUp(UnityEngine.EventSystems.PointerEventData)">
+      <summary></summary>
+      <param name="eventData"></param>
+    </member>
+    <member name="T:SummonLiberation.Harmony_Patch">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.Harmony_Patch.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.Harmony_Patch.Init">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.Harmony_Patch.SummonUnit(Faction,LorId,LorId,System.Int32,System.String,System.Boolean)">
+      <summary></summary>
+      <param name="Faction"></param>
+      <param name="EnemyUnitID"></param>
+      <param name="BookID"></param>
+      <param name="Index"></param>
+      <param name="PlayerUnitName"></param>
+      <param name="ForcedlySummon"></param>
+      <returns></returns>
+    </member>
+    <member name="M:SummonLiberation.Harmony_Patch.SummonUnitByUnitBattleData(Faction,UnitBattleDataModel,LorId,System.Int32,System.String,System.Boolean)">
+      <summary></summary>
+      <param name="Faction"></param>
+      <param name="unitBattleData"></param>
+      <param name="EnemyUnitID"></param>
+      <param name="Index"></param>
+      <param name="PlayerUnitName"></param>
+      <param name="ForcedlySummon"></param>
+      <returns></returns>
+    </member>
+    <member name="M:SummonLiberation.Harmony_Patch.SummonUnitByUnitData(Faction,UnitDataModel,LorId,LorId,System.Int32,System.String,System.Boolean)">
+      <summary></summary>
+      <param name="Faction"></param>
+      <param name="unitData"></param>
+      <param name="EnemyUnitID"></param>
+      <param name="BookID"></param>
+      <param name="Index"></param>
+      <param name="PlayerUnitName"></param>
+      <param name="ForcedlySummon"></param>
+      <returns></returns>
+    </member>
+    <member name="T:SummonLiberation.StageButtonTool">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.currentEnemyUnitIndex">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.currentLibrarianUnitIndex">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.enemyCharacterList">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.EnemyDown">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.EnemyUP">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.IsTurningPage">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.librarianCharacterList">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.LibrarianDown">
+      <summary></summary>
+    </member>
+    <member name="F:SummonLiberation.StageButtonTool.LibrarianUP">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.Init">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.OnClickEnemyDown">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.OnClickEnemyUP">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.OnClickLibrarianDown">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.OnClickLibrarianUP">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.RefreshEnemy">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.RefreshLibrarian">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.UpdateEnemyCharacterList">
+      <summary></summary>
+    </member>
+    <member name="M:SummonLiberation.StageButtonTool.UpdateLibrarianCharacterList">
+      <summary></summary>
+    </member>
+  </members>
+</doc>
