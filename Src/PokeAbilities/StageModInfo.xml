@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NormalInvitation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+  <Workshop>
+    <ID>PokeAbilities</ID>
+    <Title>Poke Abilities</Title>
+    <Description>ポ○モンの特性とタイプをパッシブとして追加します。
+
+MOD Version 2.0.0
+Copyright © Tana 2022</Description>
+    <Tag>Invitation</Tag>
+    <PreviewImage>D:\LorRes\PokeAbilities\Icon.png</PreviewImage>
+  </Workshop>
+  <InvitationFile>
+    <Stage Exist="false" />
+    <EnemyUnit Exist="false" />
+    <EquipPage_Enemy Exist="false" />
+    <EquipPage_Librarian Exist="false" />
+    <DropBook Exist="false" />
+    <CardDropTable Exist="false" />
+    <CardInfo Exist="false" />
+    <Deck Exist="false" />
+    <Dialog Exist="false" />
+    <BookDesc Exist="false" />
+    <Passive Exist="false" />
+  </InvitationFile>
+</NormalInvitation>

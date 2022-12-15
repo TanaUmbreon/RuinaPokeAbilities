@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--謝肉祭+シャワーズのページ-->
+  <Book ID="130001">
+    <TextId>230001</TextId>
+    <EquipEffect>
+      <EmotionLevel>2</EmotionLevel>
+      <HP>58</HP>
+      <Break>29</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>5</Speed>
+      <SResist>Vulnerable</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Vulnerable</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+      <!-- みずタイプ -->
+      <Passive>10300</Passive>
+      <!-- 追慕 -->
+      <Passive Pid="@origin">230001</Passive>
+    </EquipEffect>
+    <BookIcon>TheCarnival</BookIcon>
+    <CharacterSkin>Carnival</CharacterSkin>
+    <Rarity>Uncommon</Rarity>
+  </Book>
+
+  <!--謝肉祭+サンダースのページ-->
+  <Book ID="130002">
+    <TextId>230002</TextId>
+    <EquipEffect>
+      <EmotionLevel>2</EmotionLevel>
+      <HP>58</HP>
+      <Break>29</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>5</Speed>
+      <SResist>Vulnerable</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Vulnerable</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+      <!-- でんきタイプ -->
+      <Passive>10400</Passive>
+      <!-- 追慕 -->
+      <Passive Pid="@origin">230001</Passive>
+    </EquipEffect>
+    <BookIcon>TheCarnival</BookIcon>
+    <CharacterSkin>Carnival</CharacterSkin>
+    <Rarity>Uncommon</Rarity>
+  </Book>
+
+  <!--謝肉祭+ブースターのページ-->
+  <Book ID="130003">
+    <TextId>230003</TextId>
+    <EquipEffect>
+      <EmotionLevel>2</EmotionLevel>
+      <HP>58</HP>
+      <Break>29</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>5</Speed>
+      <SResist>Vulnerable</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Vulnerable</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+      <!-- ほのおタイプ -->
+      <Passive>10200</Passive>
+      <!-- 追慕 -->
+      <Passive Pid="@origin">230001</Passive>
+    </EquipEffect>
+    <BookIcon>TheCarnival</BookIcon>
+    <CharacterSkin>Carnival</CharacterSkin>
+    <Rarity>Uncommon</Rarity>
+  </Book>
+</BookXmlRoot>

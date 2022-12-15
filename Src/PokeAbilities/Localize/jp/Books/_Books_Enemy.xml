@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <bookDescList>
+    <BookDesc BookID="230001">
+      <BookName>謝肉祭+シャワーズのページ</BookName>
+      <TextList />
+    </BookDesc>
+    <BookDesc BookID="230002">
+      <BookName>謝肉祭+サンダースのページ</BookName>
+      <TextList />
+    </BookDesc>
+    <BookDesc BookID="230003">
+      <BookName>謝肉祭+ブースターのページ</BookName>
+      <TextList />
+    </BookDesc>
+  </bookDescList>
+</BookDescRoot>

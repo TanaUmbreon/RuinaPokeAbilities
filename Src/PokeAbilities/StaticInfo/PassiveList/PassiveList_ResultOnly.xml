@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PassiveXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--タイプ一致-->
+  <Passive ID="20000">
+    <Rarity>Common</Rarity>
+    <Cost>0</Cost>
+    <Script>SameType</Script>
+  </Passive>
+  <!--効果はバツグンだ！-->
+  <Passive ID="20001">
+    <Rarity>Common</Rarity>
+    <Cost>0</Cost>
+    <Script>SuperEffective</Script>
+  </Passive>
+  <!--効果は今ひとつのようだ……-->
+  <Passive ID="20002">
+    <Rarity>Common</Rarity>
+    <Cost>0</Cost>
+    <Script>NotVeryEffective</Script>
+  </Passive>
+  <!--効果がないようだ…-->
+  <Passive ID="20003">
+    <Rarity>Common</Rarity>
+    <Cost>0</Cost>
+    <Script>NoEffect</Script>
+  </Passive>
+</PassiveXmlRoot>

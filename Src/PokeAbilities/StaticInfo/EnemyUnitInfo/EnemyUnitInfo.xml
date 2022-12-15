@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<EnemyUnitClassRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--アルファ+シャワーズ-->
+  <Enemy ID="30001">
+    <NameID>61</NameID>
+    <MinHeight>220</MinHeight>
+    <MaxHeight>220</MaxHeight>
+
+    <!--謝肉祭+シャワーズのページ-->
+    <BookId>130001</BookId>
+    <!--謝肉祭+シャワーズのデッキ-->
+    <DeckId>130001</DeckId>
+
+    <DropTable Level="0">
+      <!--シャワーズの本-->
+      <DropItem Prob="0.5">134</DropItem>
+    </DropTable>
+  </Enemy>
+
+  <!--ベータ+サンダース-->
+  <Enemy ID="30002">
+    <NameID>62</NameID>
+    <MinHeight>220</MinHeight>
+    <MaxHeight>220</MaxHeight>
+
+    <!--謝肉祭+サンダースのページ-->
+    <BookId>130002</BookId>
+    <!--謝肉祭+サンダースのデッキ-->
+    <DeckId>130002</DeckId>
+
+    <DropTable Level="0">
+      <!--サンダースの本-->
+      <DropItem Prob="0.5">135</DropItem>
+    </DropTable>
+  </Enemy>
+
+  <!--ガンマ+ブースター-->
+  <Enemy ID="30003">
+    <NameID>63</NameID>
+    <MinHeight>220</MinHeight>
+    <MaxHeight>220</MaxHeight>
+
+    <!--謝肉祭+ブースターのページ-->
+    <BookId>130003</BookId>
+    <!--謝肉祭+ブースターのデッキ-->
+    <DeckId>130003</DeckId>
+
+    <DropTable Level="0">
+      <!--ブースターの本-->
+      <DropItem Prob="0.5">136</DropItem>
+    </DropTable>
+  </Enemy>
+</EnemyUnitClassRoot>

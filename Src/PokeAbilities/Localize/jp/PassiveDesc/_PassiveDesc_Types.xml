@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PassiveDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!--   <PassiveDesc ID="10100">
+    <Name>ノーマルタイプ</Name>
+    <Desc>このキャラクターにノーマルタイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にノーマルタイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>-->
+  <PassiveDesc ID="10200">
+    <Name>ほのおタイプ</Name>
+    <Desc>このキャラクターにほのおタイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にほのおタイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="10300">
+    <Name>みずタイプ</Name>
+    <Desc>このキャラクターにみずタイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にみずタイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>
+<!--   <PassiveDesc ID="22710310">
+    <Name>みず/ひこうタイプ</Name>
+    <Desc>このキャラクターにみずタイプとひこうタイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にみずタイプとひこうタイプをそれぞれランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>-->
+  <PassiveDesc ID="10400">
+    <Name>でんきタイプ</Name>
+    <Desc>このキャラクターにでんきタイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にでんきタイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>
+<!--  <PassiveDesc ID="22710500">
+    <Name>くさタイプ</Name>
+    <Desc>このキャラクターにくさタイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にくさタイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="22710600">
+    <Name>こおりタイプ</Name>
+    <Desc>このキャラクターにこおりタイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にこおりタイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="22711100">
+    <Name>エスパータイプ</Name>
+    <Desc>このキャラクターにエスパータイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にエスパータイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="22711600">
+    <Name>あくタイプ</Name>
+    <Desc>このキャラクターにあくタイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にあくタイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="22711800">
+    <Name>フェアリータイプ</Name>
+    <Desc>このキャラクターにフェアリータイプを付与。
+幕の開始時、タイプ付与されていない手元のページ2枚にフェアリータイプをランダムに付与
+(他のタイプと重複不可)</Desc>
+  </PassiveDesc> -->
+</PassiveDescRoot>

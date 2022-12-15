@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <effectTextList>
+    <BattleEffectText ID="FireType">
+      <Name>ほのおタイプ</Name>
+      <Desc>タイプ付与されたページを受ける時、以下の相性を持つ
+[効果はバツグンだ！]
+みず、じめん、いわ
+[効果は今ひとつのようだ……]
+ほのお、くさ、こおり、むし、はがね、フェアリー</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="WaterType">
+      <Name>みずタイプ</Name>
+      <Desc>タイプ付与されたページを受ける時、以下の相性を持つ
+[効果はバツグンだ！]
+でんき、くさ
+[効果は今ひとつのようだ……]
+ほのお、みず、こおり、はがね</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="ElectricType">
+      <Name>でんきタイプ</Name>
+      <Desc>タイプ付与されたページを受ける時、以下の相性を持つ
+[効果はバツグンだ！]
+じめん
+[効果は今ひとつのようだ……]
+でんき、ひこう、はがね</Desc>
+    </BattleEffectText>
+  </effectTextList>
+</BattleEffectTextRoot>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DeckXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--謝肉祭+シャワーズのデッキ-->
+  <Deck ID="130001">
+    <!--裁断-->
+    <Card Pid="@origin">401001</Card>
+    <!--食事-->
+    <Card Pid="@origin">401002</Card>
+    <!--素敵な糸が出ます-->
+    <Card Pid="@origin">401003</Card>
+    <Card Pid="@origin">401003</Card>
+    <!--きっと美味しいです？-->
+    <Card Pid="@origin">401004</Card>
+    <!--指令通り-->
+    <Card Pid="@origin">401005</Card>
+    <Card Pid="@origin">401005</Card>
+    <!--奇怪な打撃-->
+    <Card Pid="@origin">401006</Card>
+    <Card Pid="@origin">401006</Card>
+  </Deck>
+
+  <!--謝肉祭+サンダースのデッキ-->
+  <Deck ID="130002">
+    <!--裁断-->
+    <Card Pid="@origin">401001</Card>
+    <!--食事-->
+    <Card Pid="@origin">401002</Card>
+    <Card Pid="@origin">401002</Card>
+    <!--指令通り-->
+    <Card Pid="@origin">401005</Card>
+    <Card Pid="@origin">401005</Card>
+    <!--奇怪な打撃-->
+    <Card Pid="@origin">401006</Card>
+    <Card Pid="@origin">401006</Card>
+    <Card Pid="@origin">401006</Card>
+    <Card Pid="@origin">401006</Card>
+  </Deck>
+
+  <!--謝肉祭+ブースターのデッキ-->
+  <Deck ID="130003">
+    <!--裁断-->
+    <Card Pid="@origin">401001</Card>
+    <!--素敵な糸が出ます-->
+    <Card Pid="@origin">401003</Card>
+    <Card Pid="@origin">401003</Card>
+    <Card Pid="@origin">401003</Card>
+    <Card Pid="@origin">401003</Card>
+    <!--指令通り-->
+    <Card Pid="@origin">401005</Card>
+    <Card Pid="@origin">401005</Card>
+    <!--奇怪な打撃-->
+    <Card Pid="@origin">401006</Card>
+    <Card Pid="@origin">401006</Card>
+  </Deck>
+</DeckXmlRoot>

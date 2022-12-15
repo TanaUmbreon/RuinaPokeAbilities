@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PassiveDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PassiveDesc ID="20000">
+    <Name>タイプ一致</Name>
+    <Desc>与えるダメージ・混乱ダメージ量が20%増加</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="20001">
+    <Name>効果はバツグンだ！</Name>
+    <Desc>与えるダメージ・混乱ダメージ量が20%増加</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="20002">
+    <Name>効果は今ひとつのようだ……</Name>
+    <Desc>与えるダメージ・混乱ダメージ量が20%減少</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="20003">
+    <Name>効果がないようだ…</Name>
+    <Desc>与えるダメージ・混乱ダメージ量が40%減少</Desc>
+  </PassiveDesc>
+</PassiveDescRoot>

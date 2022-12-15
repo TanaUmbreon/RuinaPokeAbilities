@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--シャワーズのページ-->
+  <Book ID="134">
+    <Name>Vaporeon</Name>
+    <TextId>134</TextId>
+    <EquipEffect>
+      <HP>1</HP>
+      <Break>1</Break>
+      <SpeedMin>1</SpeedMin>
+      <Speed>5</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+      <!--みずタイプ-->
+      <Passive>10300</Passive>
+    </EquipEffect>
+    <NotEquip>true</NotEquip>
+    <BookIcon>PokeAbilities</BookIcon>
+    <Chapter>4</Chapter>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>KetherLibrarian</CharacterSkin>
+  </Book>
+
+  <!--サンダースのページ-->
+  <Book ID="135">
+    <Name>Jolteon</Name>
+    <TextId>135</TextId>
+    <EquipEffect>
+      <HP>1</HP>
+      <Break>1</Break>
+      <SpeedMin>1</SpeedMin>
+      <Speed>5</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+      <!--でんきタイプ-->
+      <Passive>10400</Passive>
+    </EquipEffect>
+    <NotEquip>true</NotEquip>
+    <BookIcon>PokeAbilities</BookIcon>
+    <Chapter>4</Chapter>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>KetherLibrarian</CharacterSkin>
+  </Book>
+
+  <!--ブースターのページ-->
+  <Book ID="136">
+    <Name>Flareon</Name>
+    <TextId>136</TextId>
+    <EquipEffect>
+      <HP>1</HP>
+      <Break>1</Break>
+      <SpeedMin>1</SpeedMin>
+      <Speed>5</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+      <!--ほのおタイプ-->
+      <Passive>10200</Passive>
+    </EquipEffect>
+    <NotEquip>true</NotEquip>
+    <BookIcon>PokeAbilities</BookIcon>
+    <Chapter>4</Chapter>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>KetherLibrarian</CharacterSkin>
+  </Book>
+</BookXmlRoot>

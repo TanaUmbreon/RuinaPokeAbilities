@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookUseXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--携帯獣の本-->
+  <BookUse ID="19960227">
+    <TextId>dropbook_PokeAbilities</TextId>
+    <BookIcon>PokeAbilities</BookIcon>
+    <Chapter>4</Chapter>
+  </BookUse>
+
+  <!--シャワーズの本-->
+  <BookUse ID="134">
+    <TextId>dropbook_Vaporeon</TextId>
+    <BookIcon>PokeAbilities</BookIcon>
+    <Chapter>4</Chapter>
+
+    <DropItem Type="Equip">134</DropItem>
+  </BookUse>
+
+  <!--サンダースの本-->
+  <BookUse ID="135">
+    <TextId>dropbook_Jolteon</TextId>
+    <BookIcon>PokeAbilities</BookIcon>
+    <Chapter>4</Chapter>
+
+    <DropItem Type="Equip">135</DropItem>
+  </BookUse>
+
+  <!--ブースターの本-->
+  <BookUse ID="136">
+    <TextId>dropbook_Flareon</TextId>
+    <BookIcon>PokeAbilities</BookIcon>
+    <Chapter>4</Chapter>
+
+    <DropItem Type="Equip">136</DropItem>
+  </BookUse>
+</BookUseXmlRoot>

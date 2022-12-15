@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PassiveXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--
+  タイプ系パッシブのIDは10000番台を使用する。
+  ID「1xxyy」の「xx」が1つ目のタイプ、「yy」が2つ目のタイプを表す。
+  「xx」または「yy」が「00」の時はタイプなし、「01」の時はノーマルタイプ、「02」の時はほのおタイプという風になる。
+  -->
+
+  <!-- ノーマルタイプ -->
+  <Passive ID="10100">
+    <Rarity>Common</Rarity>
+    <Cost>0</Cost>
+    <InnerType>10100</InnerType>
+    <Script>NormalType</Script>
+  </Passive>
+  <!-- ほのおタイプ -->
+  <Passive ID="10200">
+    <Rarity>Common</Rarity>
+    <Cost>0</Cost>
+    <InnerType>10100</InnerType>
+    <Script>FireType</Script>
+  </Passive>
+  <!-- みずタイプ -->
+  <Passive ID="10300">
+    <Rarity>Common</Rarity>
+    <Cost>0</Cost>
+    <InnerType>10100</InnerType>
+    <Script>WaterType</Script>
+  </Passive>
+  <!-- でんきタイプ -->
+  <Passive ID="10400">
+    <Rarity>Common</Rarity>
+    <Cost>0</Cost>
+    <InnerType>10100</InnerType>
+    <Script>ElectricType</Script>
+  </Passive>
+</PassiveXmlRoot>

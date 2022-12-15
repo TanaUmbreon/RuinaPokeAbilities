@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <bookDescList>
+    <BookDesc BookID="134">
+      <BookName>シャワーズのページ</BookName>
+      <TextList>
+        <Desc>あわはきポケモン</Desc>
+        <Desc />
+        <Desc>体の細胞のつくりが水の分子と似ている。水に溶けると見えなくなる。</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="135">
+      <BookName>サンダースのページ</BookName>
+      <TextList>
+        <Desc>かみなりポケモン</Desc>
+        <Desc />
+        <Desc>怒ったり驚いたりすると全身の毛が針のように逆立って相手をつらぬく。</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="136">
+      <BookName>ブースターのページ</BookName>
+      <TextList>
+        <Desc>ほのおポケモン</Desc>
+        <Desc />
+        <Desc>体内に炎袋があり深く息を吸い込んだあと1700度の火を吐く。</Desc>
+      </TextList>
+    </BookDesc>
+  </bookDescList>
+</BookDescRoot>

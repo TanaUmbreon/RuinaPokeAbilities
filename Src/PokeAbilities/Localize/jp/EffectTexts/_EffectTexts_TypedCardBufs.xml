@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <effectTextList>
+    <BattleEffectText ID="CardBuf_NormalType">
+      <Name>ノーマルタイプ</Name>
+      <Desc>ノーマルタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_FireType">
+      <Name>ほのおタイプ</Name>
+      <Desc>ほのおタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_WaterType">
+      <Name>みずタイプ</Name>
+      <Desc>みずタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_ElectricType">
+      <Name>でんきタイプ</Name>
+      <Desc>でんきタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_GrassType">
+      <Name>くさタイプ</Name>
+      <Desc>くさタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_IceType">
+      <Name>こおりタイプ</Name>
+      <Desc>こおりタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_FightingType">
+      <Name>かくとうタイプ</Name>
+      <Desc>かくとうタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_PoisonType">
+      <Name>どくタイプ</Name>
+      <Desc>どくタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_GroundType">
+      <Name>じめんタイプ</Name>
+      <Desc>じめんタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_FlyingType">
+      <Name>ひこうタイプ</Name>
+      <Desc>ひこうタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_PsychicType">
+      <Name>エスパータイプ</Name>
+      <Desc>エスパータイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_BugType">
+      <Name>むしタイプ</Name>
+      <Desc>むしタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_RockType">
+      <Name>いわタイプ</Name>
+      <Desc>いわタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_GhostType">
+      <Name>ゴーストタイプ</Name>
+      <Desc>ゴーストタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_DragonType">
+      <Name>ドラゴンタイプ</Name>
+      <Desc>ドラゴンタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_DarkType">
+      <Name>あくタイプ</Name>
+      <Desc>あくタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_SteelType">
+      <Name>はがねタイプ</Name>
+      <Desc>はがねタイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="CardBuf_FairyType">
+      <Name>フェアリータイプ</Name>
+      <Desc>フェアリータイプを持つキャラクターが使用したとき、このページで与えるダメージ・混乱ダメージ量+20%</Desc>
+    </BattleEffectText>
+  </effectTextList>
+</BattleEffectTextRoot>

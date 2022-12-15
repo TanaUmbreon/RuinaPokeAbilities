@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<StageXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--謝肉祭+P-->
+  <Stage id="30001">
+    <Name>TheCarnival+P</Name>
+
+    <Wave>
+      <Formation>4</Formation>
+      <!--アルファ+シャワーズ-->
+      <Unit>30001</Unit>
+      <!--ベータ-->
+      <Unit>30002</Unit>
+      <!--ガンマ-->
+      <Unit>30003</Unit>
+    </Wave>
+    <FloorNum>1</FloorNum>
+
+    <Chapter>4</Chapter>
+    <Invitation Combine="BookRecipe">
+      <!-- 携帯獣の本 -->
+      <Book>19960227</Book>
+      <!-- 謝肉祭の本 -->
+      <Book Pid="@origin">230001</Book>
+    </Invitation>
+    <Condition>
+      <!-- 謝肉祭 -->
+      <Stage Pid="@origin">30001</Stage>
+    </Condition>
+    <StoryType>PokeAbilities</StoryType>
+  </Stage>
+</StageXmlRoot>
