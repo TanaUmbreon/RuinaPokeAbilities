@@ -1,5 +1,4 @@
 ﻿using System;
-using BaseMod;
 using PokeAbilities.Core;
 using PokeAbilities.Extensions;
 using PokeAbilities.Passives.ResultOnly;
