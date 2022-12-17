@@ -35,7 +35,7 @@ namespace PokeAbilities.Extensions
         /// <param name="bufListDetail">状態を検索する対象の状態リスト。</param>
         /// <param name="readyType">状態を検索する幕。</param>
         /// <returns>指定した状態が有効な状態で見つかった場合はその状態。見つからなかった場合はnull。</returns>
-        public static T FindBuf<T>(this BattleUnitBufListDetail bufListDetail, BufReadyType readyType = BufReadyType.ThisRound) where T : BattleUnitBuf
+        public static T FindBufExact<T>(this BattleUnitBufListDetail bufListDetail, BufReadyType readyType = BufReadyType.ThisRound) where T : BattleUnitBuf
             => bufListDetail.GetBufList(readyType).FirstOrDefault(b => b.GetType() == typeof(T) && !b.IsDestroyed()) as T;
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace PokeAbilities.Extensions
         /// <param name="bufListDetail">付与を判定する対象の状態リスト。</param>
         /// <param name="readyType">付与を判定する幕。省略した場合はこの幕。</param>
         /// <returns>指定した状態が有効な状態で付与されている場合は true、そうでない場合は false。</returns>
-        public static bool HasBuf<T>(this BattleUnitBufListDetail bufListDetail, BufReadyType readyType = BufReadyType.ThisRound) where T : BattleUnitBuf
+        public static bool HasBufExact<T>(this BattleUnitBufListDetail bufListDetail, BufReadyType readyType = BufReadyType.ThisRound) where T : BattleUnitBuf
             => bufListDetail.GetBufList(readyType).Any(b => b.GetType() == typeof(T) && !b.IsDestroyed());
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace PokeAbilities.Extensions
         /// <typeparam name="T">削除する状態の型。</typeparam>
         /// <param name="bufListDetail">削除する対象の状態リスト。</param>
         /// <param name="readyType">削除する対象の幕。省略した場合はこの幕。</param>
-        public static void RemoveBufAll<T>(this BattleUnitBufListDetail bufListDetail, BufReadyType readyType = BufReadyType.ThisRound) where T : BattleUnitBuf
+        public static void RemoveBufAllExact<T>(this BattleUnitBufListDetail bufListDetail, BufReadyType readyType = BufReadyType.ThisRound) where T : BattleUnitBuf
             => bufListDetail.GetBufList(readyType).RemoveAll(b => b.GetType() == typeof(T));
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace PokeAbilities.Extensions
 
             // 状態リストから、今回付与しようとしている状態の型と完全一致する状態を現在の状態として取得する
             // ※同じ型の状態が付与されていない場合はnullとする
-            T currentBuf = bufListDetail.FindBuf<T>(readyType);
+            T currentBuf = bufListDetail.FindBufExact<T>(readyType);
             Log.Instance.Debug($"- 現在の状態: {(currentBuf is null ? null : $"{{ 型名: '{currentBuf.GetType().Name}', 付与数: {currentBuf.stack} }}")}");
 
             // 今回付与しようとしている状態のインスタンスを決定する
@@ -228,7 +228,7 @@ namespace PokeAbilities.Extensions
                 actor = bufListDetail._self;
             }
 
-            T currentBuf = bufListDetail.FindBuf<T>(readyType);
+            T currentBuf = bufListDetail.FindBufExact<T>(readyType);
             Log.Instance.Debug($"- 現在の状態: {(currentBuf is null ? null : $"{{ 型名: '{currentBuf.GetType().Name}', 付与数: {currentBuf.stack} }}")}");
 
             addingBuf.stack = 0;
