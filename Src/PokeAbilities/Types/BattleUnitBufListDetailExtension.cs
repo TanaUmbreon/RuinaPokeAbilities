@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace PokeAbilities.Types
@@ -145,12 +146,14 @@ namespace PokeAbilities.Types
         private static T AddBufDefaultConstructor<T>(this BattleUnitBufListDetail bufListDetail, int stack, BattleUnitModel actor, BufReadyType readyType, bool byCard) where T : BattleUnitBuf, new()
         {
             string GetName(BattleUnitModel unit)
-                => unit is null ? "null" : $"'{unit.UnitData.unitData.name}' (位置: {unit.index})";
-            Log.Instance.DebugWithCaller($"Called. {{ 対象キャラクター: {GetName(bufListDetail._self)}, 状態の型名: '{typeof(T).Name}', 補正前の付与数: {stack}, 付与元の行動キャラクター: {GetName(actor)}, 付与する幕: {readyType}, バトルページの効果による付与: {byCard} }}");
+               => $"{(unit == null ? "null" : $"{unit.faction}:{unit.index}:{unit.UnitData.unitData.name}")}";
+            string GetBufState(BattleUnitBuf buf)
+                => $"{(string.IsNullOrEmpty(buf.bufActivatedNameWithStack) ? $"{buf.GetType().Name}:{buf.stack}" : buf.bufActivatedNameWithStack)}";
+            Log.Instance.DebugWithCaller($"が呼び出されました。(BufListDetailOwner={GetName(bufListDetail._self)}, AddingBufType={typeof(T).Name}, AddingStackBeforeModify={stack}, Actor={GetName(actor)}, ReadyType={readyType}, ByCard={byCard})");
 
             // 付与数0で付与するカスタム状態があるので、ここでは付与数0指定でも状態付与できるようにしている
             // (本家のAddKeywordBufXxxメソッドやBaseModのAddBufByXxx拡張メソッドでは、付与数0指定だと状態付与できない)
-            if (stack < 0) { Log.Instance.DebugWithCaller("Completed. (付与数がマイナス)"); return null; }
+            if (stack < 0) { Log.Instance.DebugWithCaller("が完了しました。付与数がマイナスのため状態付与できません。"); return null; }
 
             // 火傷を今の幕以外に付与しようとしている場合、今の幕に変えて付与させる
             if (readyType != BufReadyType.ThisRound && typeof(T) == typeof(BattleUnitBuf_burn))
@@ -166,16 +169,19 @@ namespace PokeAbilities.Types
             // 状態リストから、今回付与しようとしている状態の型と完全一致する状態を現在の状態として取得する
             // ※同じ型の状態が付与されていない場合はnullとする
             T currentBuf = bufListDetail.FindBufExact<T>(readyType);
-            Log.Instance.Debug($"- 現在の状態: {(currentBuf is null ? null : $"{{ 型名: '{currentBuf.GetType().Name}', 付与数: {currentBuf.stack} }}")}");
+            if (currentBuf != null)
+            {
+                Log.Instance.Debug($"付与する状態と同じ型のインスタンスが既に付与されています。(CurrentBufState={GetBufState(currentBuf)})");
+            }
 
             // 今回付与しようとしている状態のインスタンスを決定する
             // ※同じ型の状態が付与されておらず現在の状態を取得できなかった場合や、独立アイコン状態
             //   (状態が付与されるたび、付与数を加算せず同じ状態アイコンを並べていく形式)である場合はインスタンスを新規生成する
             //   そうでない場合は取得した現在の状態を対象とする
             T addingBuf = (currentBuf == null || currentBuf.independentBufIcon) ? new T() { stack = 0 } : currentBuf;
-            Log.Instance.Debug($"- 付与しようとしている状態: {{ 型名: '{addingBuf.GetType().Name}', 現在の状態と同じインスタンス: {(addingBuf == currentBuf)} }}");
+            Log.Instance.Debug($"付与する状態のインスタンスを決定しました。(AddingBufState={GetBufState(addingBuf)})");
 
-            if (!bufListDetail.CanAddBuf(addingBuf)) { Log.Instance.DebugWithCaller("Completed. (状態付与できない)"); return null; }
+            if (!bufListDetail.CanAddBuf(addingBuf)) { Log.Instance.DebugWithCaller("が完了しました。この状態は付与できません。"); return null; }
 
             // 追加しようとしている状態と現在の状態のインスタンスが異なる場合は、インスタンスを新規生成したと判断する。
             // 新規生成時は状態リストへの追加と状態の初期化を行う
@@ -185,15 +191,16 @@ namespace PokeAbilities.Types
             //   という状態を保証する
             if (addingBuf != currentBuf)
             {
+                Log.Instance.Debug("新規付与の状態のため状態リストに追加しました。");
                 bufListDetail.GetBufList(readyType).Add(addingBuf);
                 addingBuf.Init(bufListDetail._self);
             }
 
             // 指定された付与数を補正して、その補正後の値で状態の付与数を加算する
             int s = addingBuf.ModifyAndAddStack(stack, actor, readyType, byCard);
-            Log.Instance.Debug($"- 実際の付与数: {s}");
+            Log.Instance.Debug($"実際の付与数を決定しました。(AddingStackAfterModify={s})");
 
-            Log.Instance.DebugWithCaller("Completed. (付与成功)");
+            Log.Instance.DebugWithCaller("が完了しました。状態の付与が成功しました。");
             return addingBuf;
         }
 
@@ -211,10 +218,12 @@ namespace PokeAbilities.Types
         private static T AddBufCreatedInstance<T>(this BattleUnitBufListDetail bufListDetail, T addingBuf, int stack, BattleUnitModel actor, BufReadyType readyType, bool byCard) where T : BattleUnitBuf
         {
             string GetName(BattleUnitModel unit)
-                => unit is null ? "null" : $"'{unit.UnitData.unitData.name}' (位置: {unit.index})";
-            Log.Instance.DebugWithCaller($"Called. {{ 対象キャラクター: {GetName(bufListDetail._self)}, 状態の型名: '{addingBuf.GetType().Name}', 補正前の付与数: {stack}, 付与元の行動キャラクター: {GetName(actor)}, 付与する幕: {readyType}, バトルページの効果による付与: {byCard} }}");
+               => $"{(unit == null ? "null" : $"{unit.faction}:{unit.index}:{unit.UnitData.unitData.name}")}";
+            string GetBufState(BattleUnitBuf buf)
+               => $"{(string.IsNullOrEmpty(buf.bufActivatedNameWithStack) ? $"{buf.GetType().Name}:{buf.stack}" : buf.bufActivatedNameWithStack)}";
+            Log.Instance.DebugWithCaller($"が呼び出されました。(BufListDetailOwner={GetName(bufListDetail._self)}, AddingBufType={addingBuf.GetType().Name}, AddingStackBeforeModify={stack}, Actor={GetName(actor)}, ReadyType={readyType}, ByCard={byCard})");
 
-            if (stack < 0) { Log.Instance.DebugWithCaller("Completed. (付与数がマイナス)"); return null; }
+            if (stack < 0) { Log.Instance.DebugWithCaller("が完了しました。この状態は付与できません。"); return null; }
 
             if (readyType != BufReadyType.ThisRound && addingBuf.bufType == KeywordBuf.Burn)
             {
@@ -227,24 +236,28 @@ namespace PokeAbilities.Types
             }
 
             T currentBuf = bufListDetail.FindBufExact<T>(readyType);
-            Log.Instance.Debug($"- 現在の状態: {(currentBuf is null ? null : $"{{ 型名: '{currentBuf.GetType().Name}', 付与数: {currentBuf.stack} }}")}");
+            if (currentBuf != null)
+            {
+                Log.Instance.Debug($"付与する状態と同じ型のインスタンスが既に付与されています。(CurrentBufState={GetBufState(currentBuf)})");
+            }
 
             addingBuf.stack = 0;
             T actualAddingBuf = (currentBuf == null || currentBuf.independentBufIcon) ? addingBuf : currentBuf;
-            Log.Instance.Debug($"- 付与しようとしている状態: {{ 型名: '{actualAddingBuf.GetType().Name}', 現在の状態と同じインスタンス: {(actualAddingBuf == currentBuf)} }}");
+            Log.Instance.Debug($"付与する状態のインスタンスを決定しました。(AddingBufState={GetBufState(addingBuf)})");
 
-            if (!bufListDetail.CanAddBuf(actualAddingBuf)) { Log.Instance.DebugWithCaller("Completed. (状態付与できない)"); return null; }
+            if (!bufListDetail.CanAddBuf(actualAddingBuf)) { Log.Instance.DebugWithCaller("が完了しました。この状態は付与できません。"); return null; }
 
             if (actualAddingBuf != currentBuf)
             {
+                Log.Instance.Debug("新規付与の状態のため状態リストに追加しました。");
                 bufListDetail.GetBufList(readyType).Add(actualAddingBuf);
                 actualAddingBuf.Init(bufListDetail._self);
             }
 
             int s = actualAddingBuf.ModifyAndAddStack(stack, actor, readyType, byCard);
-            Log.Instance.Debug($"- 実際の付与数: {s}");
+            Log.Instance.Debug($"実際の付与数を決定しました。(AddingStackAfterModify={s})");
 
-            Log.Instance.DebugWithCaller("Completed. (付与成功)");
+            Log.Instance.DebugWithCaller("が完了しました。状態の付与が成功しました。");
             return actualAddingBuf;
         }
 
