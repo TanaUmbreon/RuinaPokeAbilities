@@ -6,7 +6,7 @@
     <Artwork>RainDance</Artwork>
     <Rarity>Unique</Rarity>
     <Spec Range="Near" Cost="3" />
-    <Script>rain5all</Script>
+    <Script>water</Script>
     <ScriptDesc />
     <BehaviourList>
       <Behaviour Min="6" Dice="8" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" Desc="" />

@@ -141,28 +141,75 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Localize\jp\BattleCardAbilities\_BattleCardAbilities.xml" />
-    <Content Include="Localize\jp\BattlesCards\_BattlesCards.xml" />
-    <Content Include="Localize\jp\Books\_Books_Enemy.xml" />
-    <Content Include="Localize\jp\Books\_Books_Player.xml" />
-    <Content Include="Localize\jp\CharactersName\_CharactersName.xml" />
-    <Content Include="Localize\jp\EffectTexts\_EffectTexts_Keywords.xml" />
-    <Content Include="Localize\jp\EffectTexts\_EffectTexts_TypedCardBufs.xml" />
-    <Content Include="Localize\jp\EffectTexts\_EffectTexts_TypedUnitBufs.xml" />
-    <Content Include="Localize\jp\Etc\JP_Dropbook.xml" />
-    <Content Include="Localize\jp\PassiveDesc\_PassiveDesc_ResultOnly.xml" />
-    <Content Include="Localize\jp\PassiveDesc\_PassiveDesc_Types.xml" />
-    <Content Include="Localize\jp\StageName\_StageName.xml" />
-    <Content Include="StageModInfo.xml" />
-    <Content Include="StaticInfo\Card\Card.xml" />
-    <Content Include="StaticInfo\Deck\Deck.xml" />
-    <Content Include="StaticInfo\DropBook\DropBook.xml" />
-    <Content Include="StaticInfo\EnemyUnitInfo\EnemyUnitInfo.xml" />
-    <Content Include="StaticInfo\EquipPage\EquipPage_Enemy.xml" />
-    <Content Include="StaticInfo\EquipPage\EquipPage_Player.xml" />
-    <Content Include="StaticInfo\PassiveList\PassiveList_ResultOnly.xml" />
-    <Content Include="StaticInfo\PassiveList\PassiveList_Types.xml" />
-    <Content Include="StaticInfo\StageInfo\StageInfo.xml" />
+    <Content Include="Localize\jp\BattleCardAbilities\_BattleCardAbilities.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\BattlesCards\_BattlesCards.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\Books\_Books_Enemy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\Books\_Books_Player.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\CharactersName\_CharactersName.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\EffectTexts\_EffectTexts_Keywords.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\EffectTexts\_EffectTexts_TypedCardBufs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\EffectTexts\_EffectTexts_TypedUnitBufs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\Etc\JP_Dropbook.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\PassiveDesc\_PassiveDesc_ResultOnly.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\PassiveDesc\_PassiveDesc_Types.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localize\jp\StageName\_StageName.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StageModInfo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\CardDropTable\CardDropTable.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\Card\Card.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\Deck\Deck.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\DropBook\DropBook.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\EnemyUnitInfo\EnemyUnitInfo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\EquipPage\EquipPage_Enemy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\EquipPage\EquipPage_Player.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\PassiveList\PassiveList_ResultOnly.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\PassiveList\PassiveList_Types.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticInfo\StageInfo\StageInfo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CardDropTableXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--シャワーズの本-->
+  <DropTable ID="134">
+    <!--あまごい-->
+    <Card>1</Card>
+  </DropTable>
+</CardDropTableXmlRoot>

@@ -13,6 +13,7 @@
     <BookIcon>PokeAbilities</BookIcon>
     <Chapter>4</Chapter>
 
+    <DropNum>1</DropNum>
     <DropItem Type="Equip">134</DropItem>
   </BookUse>
 
