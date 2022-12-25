@@ -1,7 +1,7 @@
 ﻿using System;
 using PokeAbilities.Resources;
 
-namespace PokeAbilities.Passives.ResultOnly
+namespace PokeAbilities.ResultOnlyPassives
 {
     /// <summary>
     /// 適用された効果の結果ログ (<see cref="BattleCardTotalResult"/>) に表示する為だけのパッシブの基底クラスです。
@@ -20,8 +20,8 @@ namespace PokeAbilities.Passives.ResultOnly
         {
             try
             {
-                name = PassiveDescXmlList.Instance.GetName(DescId);
-                desc = PassiveDescXmlList.Instance.GetDesc(DescId);
+                name = DescId.GetName();
+                desc = DescId.GetDesc();
             }
             catch (Exception ex)
             {

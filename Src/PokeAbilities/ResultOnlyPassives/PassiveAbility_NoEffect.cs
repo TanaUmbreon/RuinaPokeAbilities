@@ -1,6 +1,6 @@
 ﻿using PokeAbilities.Resources;
 
-namespace PokeAbilities.Passives.ResultOnly
+namespace PokeAbilities.ResultOnlyPassives
 {
     /// <summary>
     /// 表示専用パッシブ「効果がないようだ…」
