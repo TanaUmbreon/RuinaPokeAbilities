@@ -40,7 +40,7 @@ namespace PokeAbilities.Types
             }
         }
 
-        public override void OnRoundStart()
+        public override void OnRoundStartAfter()
         {
             try
             {
