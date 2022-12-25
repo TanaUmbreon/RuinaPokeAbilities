@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cardDescList>
+    <BattleCardAbility ID="rain5all">
+      <Desc>このページはみずタイプ固定</Desc>
+      <Desc>[使用時] 全てのキャラクターにあめ5を付与</Desc>
+    </BattleCardAbility>
+  </cardDescList>
+</BattleCardAbilityDescRoot>

@@ -16,4 +16,12 @@
     <Name>効果がないようだ…</Name>
     <Desc>与えるダメージ・混乱ダメージ量が40%減少</Desc>
   </PassiveDesc>
+  <PassiveDesc ID="20010">
+    <Name>あめ(みずタイプ)</Name>
+    <Desc>与えるダメージ・混乱ダメージ量が20%増加</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="20011">
+    <Name>あめ(ほのおタイプ)</Name>
+    <Desc>与えるダメージ・混乱ダメージ量が20%減少</Desc>
+  </PassiveDesc>
 </PassiveDescRoot>

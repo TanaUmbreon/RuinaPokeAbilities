@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DiceCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--あまごい-->
+  <Card ID="1">
+    <Name>Rain Dance</Name>
+    <Artwork>RainDance</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="3" />
+    <Script>rain5all</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="6" Dice="8" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" Desc="" />
+      <Behaviour Min="7" Dice="9" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" Desc="" />
+    </BehaviourList>
+    <Chapter>4</Chapter>
+    <Priority>0</Priority>
+  </Card>
+</DiceCardXmlRoot>

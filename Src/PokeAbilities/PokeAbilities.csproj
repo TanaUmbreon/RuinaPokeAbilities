@@ -82,127 +82,88 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\BattleUnitBufListDetailExtension.cs" />
-    <Compile Include="Extensions\LogExtension.cs" />
-    <Compile Include="TypedPassives\UnitTypes.cs" />
-    <Compile Include="Extensions\BattleDiceCardModelExtension.cs" />
-    <Compile Include="Extensions\PokeTypeExtension.cs" />
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="IRandomizer.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBufTypeBase.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_BugType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_DarkType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_DragonType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_ElectricType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_FairyType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_FightingType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_FireType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_FlyingType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_GhostType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_GrassType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_GroundType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_IceType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_NormalType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_PoisonType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_PsychicType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_RockType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_SteelType.cs" />
-    <Compile Include="TypedCardBufs\BattleDiceCardBuf_WaterType.cs" />
-    <Compile Include="TypedPassives\PassiveAbility_FireType.cs" />
-    <Compile Include="TypedPassives\PassiveAbility_ElectricType.cs" />
-    <Compile Include="TypedUnitBufs\BattleUnitBufTypeBase.cs" />
-    <Compile Include="TypedUnitBufs\BattleUnitBuf_ElectricType.cs" />
-    <Compile Include="TypedUnitBufs\BattleUnitBuf_FireType.cs" />
-    <Compile Include="TypedUnitBufs\BattleUnitBuf_WaterType.cs" />
-    <Compile Include="Core\TypeChart.cs" />
     <Compile Include="Log.cs" />
-    <Compile Include="ResultOnlyPassives\PassiveAbility_SameType.cs" />
-    <Compile Include="ResultOnlyPassives\PassiveAbility_NotVeryEffective.cs" />
-    <Compile Include="ResultOnlyPassives\PassiveAbility_NoEffect.cs" />
-    <Compile Include="TypedPassives\PassiveAbilityTypeBase.cs" />
-    <Compile Include="TypedPassives\PassiveAbility_WaterType.cs" />
-    <Compile Include="ResultOnlyPassives\PassiveAbilityResultOnlyBase.cs" />
-    <Compile Include="ResultOnlyPassives\PassiveAbility_SuperEffective.cs" />
     <Compile Include="Patches\DropSpecialBookPatch.cs" />
     <Compile Include="Patches\StoryIconPatch.cs" />
     <Compile Include="Patches\StoryLinePatch.cs" />
     <Compile Include="PokeAbilitiesInitializer.cs" />
-    <Compile Include="Core\PokeType.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\BookId.cs" />
-    <Compile Include="Resources\ExtraTextId.cs" />
     <Compile Include="Resources\PassiveDescId.cs" />
-    <Compile Include="Resources\AssemblyInfo.cs" />
-    <Compile Include="Resources\LoadedAssembly.cs" />
-    <Compile Include="Resources\ArtWorkName.cs" />
-    <Compile Include="Resources\LoadedResources.cs" />
-    <Compile Include="Resources\ResourcePath.cs" />
-    <Compile Include="Resources\StageId.cs" />
-    <Compile Include="Resources\StageName.cs" />
-    <Compile Include="Core\TypeEffectiveness.cs" />
+    <Compile Include="ResultOnlyPassives\PassiveAbilityResultOnlyBase.cs" />
+    <Compile Include="ResultOnlyPassives\PassiveAbility_NoEffect.cs" />
+    <Compile Include="ResultOnlyPassives\PassiveAbility_NotVeryEffective.cs" />
+    <Compile Include="ResultOnlyPassives\PassiveAbility_SameType.cs" />
+    <Compile Include="ResultOnlyPassives\PassiveAbility_SuperEffective.cs" />
+    <Compile Include="TypeSystem\BattleDiceCardBufTypeBase.cs" />
+    <Compile Include="TypeSystem\BattleDiceCardModelExtension.cs" />
+    <Compile Include="TypeSystem\BattleUnitBufListDetailExtension.cs" />
+    <Compile Include="TypeSystem\BattleUnitBufTypeBase.cs" />
+    <Compile Include="TypeSystem\PassiveAbilityTypeBase.cs" />
+    <Compile Include="TypeSystem\TypePassives\PassiveAbility_ElectricType.cs" />
+    <Compile Include="TypeSystem\TypePassives\PassiveAbility_FireType.cs" />
+    <Compile Include="TypeSystem\TypePassives\PassiveAbility_WaterType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_BugType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_DarkType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_DragonType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_ElectricType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_FairyType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_FightingType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_FireType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_FlyingType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_GhostType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_GrassType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_GroundType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_IceType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_NormalType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_PoisonType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_PsychicType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_RockType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_SteelType.cs" />
+    <Compile Include="TypeSystem\TypeCardBufs\BattleDiceCardBuf_WaterType.cs" />
+    <Compile Include="TypeSystem\PokeType.cs" />
+    <Compile Include="TypeSystem\PokeTypeExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomUtilRandomizer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Localize\jp\Books\_Books_Enemy.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\Books\_Books_Player.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\CharactersName\_CharactersName.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\EffectTexts\_EffectTexts_UnitBufs.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\EffectTexts\_EffectTexts_TypedCardBufs.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\EffectTexts\_EffectTexts_TypedUnitBufs.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\Etc\JP_Dropbook.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\PassiveDesc\_PassiveDesc_ResultOnly.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\PassiveDesc\_PassiveDesc_Types.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Localize\jp\StageName\_StageName.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StageModInfo.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticInfo\Deck\Deck.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticInfo\DropBook\DropBook.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticInfo\EnemyUnitInfo\EnemyUnitInfo.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticInfo\EquipPage\EquipPage_Enemy.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticInfo\EquipPage\EquipPage_Player.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticInfo\PassiveList\PassiveList_ResultOnly.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticInfo\PassiveList\PassiveList_Types.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticInfo\StageInfo\StageInfo.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Compile Include="Resources\ArtWork.cs" />
+    <Compile Include="Resources\BookId.cs" />
+    <Compile Include="Resources\ExtraText.cs" />
+    <Compile Include="Resources\StageId.cs" />
+    <Compile Include="TypeSystem\TypeChart.cs" />
+    <Compile Include="TypeSystem\TypeEffectiveness.cs" />
+    <Compile Include="TypeSystem\TypeUnitBufs\BattleUnitBuf_ElectricType.cs" />
+    <Compile Include="TypeSystem\TypeUnitBufs\BattleUnitBuf_FireType.cs" />
+    <Compile Include="TypeSystem\TypeUnitBufs\BattleUnitBuf_WaterType.cs" />
+    <Compile Include="TypeSystem\UnitTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Localize\jp\BattleCardAbilities\_BattleCardAbilities.xml" />
+    <Content Include="Localize\jp\BattlesCards\_BattlesCards.xml" />
+    <Content Include="Localize\jp\Books\_Books_Enemy.xml" />
+    <Content Include="Localize\jp\Books\_Books_Player.xml" />
+    <Content Include="Localize\jp\CharactersName\_CharactersName.xml" />
+    <Content Include="Localize\jp\EffectTexts\_EffectTexts_Keywords.xml" />
+    <Content Include="Localize\jp\EffectTexts\_EffectTexts_TypedCardBufs.xml" />
+    <Content Include="Localize\jp\EffectTexts\_EffectTexts_TypedUnitBufs.xml" />
+    <Content Include="Localize\jp\Etc\JP_Dropbook.xml" />
+    <Content Include="Localize\jp\PassiveDesc\_PassiveDesc_ResultOnly.xml" />
+    <Content Include="Localize\jp\PassiveDesc\_PassiveDesc_Types.xml" />
+    <Content Include="Localize\jp\StageName\_StageName.xml" />
+    <Content Include="StageModInfo.xml" />
+    <Content Include="StaticInfo\Card\Card.xml" />
+    <Content Include="StaticInfo\Deck\Deck.xml" />
+    <Content Include="StaticInfo\DropBook\DropBook.xml" />
+    <Content Include="StaticInfo\EnemyUnitInfo\EnemyUnitInfo.xml" />
+    <Content Include="StaticInfo\EquipPage\EquipPage_Enemy.xml" />
+    <Content Include="StaticInfo\EquipPage\EquipPage_Player.xml" />
+    <Content Include="StaticInfo\PassiveList\PassiveList_ResultOnly.xml" />
+    <Content Include="StaticInfo\PassiveList\PassiveList_Types.xml" />
+    <Content Include="StaticInfo\StageInfo\StageInfo.xml" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <effectTextList>
+    <BattleEffectText ID="Rain">
+      <Name>あめ</Name>
+      <Desc>幕の開始時、タイプ付与されていない手元のページ2枚にみずタイプをランダムに付与。
+みずタイプが付与されたページで受けるダメージ・混乱ダメージ量+20%
+ほのおタイプが付与されたページで受けるダメージ・混乱ダメージ量-20%
+幕の終了時、数値が1減少する(最大5)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="Rain_Simple">
+      <Name>あめ</Name>
+      <Desc>幕の開始時、手札2枚にみずタイプをランダム付与。幕の終了時、数値が1減少</Desc>
+    </BattleEffectText>
+  </effectTextList>
+</BattleEffectTextRoot>
