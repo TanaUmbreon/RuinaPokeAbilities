@@ -100,7 +100,9 @@
     <Compile Include="Types\BattleDiceCardModelExtension.cs" />
     <Compile Include="Types\BattleUnitBufListDetailExtension.cs" />
     <Compile Include="Types\BattleUnitBufTypeBase.cs" />
+    <Compile Include="Types\DiceCardSelfAbilityTypeBase.cs" />
     <Compile Include="Types\PassiveAbilityTypeBase.cs" />
+    <Compile Include="Types\TypeCardAbilities\DiceCardSelfAbility_water.cs" />
     <Compile Include="Types\TypePassives\PassiveAbility_ElectricType.cs" />
     <Compile Include="Types\TypePassives\PassiveAbility_FireType.cs" />
     <Compile Include="Types\TypePassives\PassiveAbility_WaterType.cs" />
