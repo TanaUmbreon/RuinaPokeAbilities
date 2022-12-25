@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using PokeAbilities.Resources;
 
 namespace PokeAbilities
 {
@@ -29,8 +28,6 @@ namespace PokeAbilities
         /// </summary>
         private Log()
             => File.WriteAllText(FilePath, "");
-
-        #region Debug
 
         /// <summary>
         /// 指定したメッセージでデバッグ レベルのログを追加します。
@@ -59,9 +56,26 @@ namespace PokeAbilities
         public void DebugWithCaller(string message)
             => Debug($"[{GetCallerInfo(new StackTrace())}] {message}");
 
-        #endregion
+        public void DebugOnBattleDiceCardBufWithCaller(string message, BattleDiceCardBuf cardBuf)
+        {
+            StackFrame frame = new StackTrace().GetFrame(1);
+            string caller = frame is null ? "Caller not found" : $"{frame.GetMethod().DeclaringType.Name}.{frame.GetMethod().Name}";
+            Debug($"[{caller}] {message} (CardName={cardBuf._card.GetName()}, CardOwner={cardBuf._card.owner.faction}:{cardBuf._card.owner.index}:{cardBuf._card.owner.UnitData.unitData.name})");
+        }
 
-        #region Info
+        public void DebugOnBattleUnitBufWithCaller(string message, BattleUnitBuf buf)
+        {
+            StackFrame frame = new StackTrace().GetFrame(1);
+            string caller = frame is null ? "Caller not found" : $"{frame.GetMethod().DeclaringType.Name}.{frame.GetMethod().Name}";
+            string nameWithStack = buf.bufActivatedNameWithStack;
+            if (string.IsNullOrEmpty(nameWithStack)) { nameWithStack = $"{buf.GetType().Name}:{buf.stack}"; }
+            Debug($"[{caller}] {message} (BufState={nameWithStack}, BufOwner={buf._owner.faction}:{buf._owner.index}:{buf._owner.UnitData.unitData.name})");
+        }
+
+        public void DebugOnBattleDiceBehavior(BattleDiceBehavior behavior, string message)
+        {
+            Debug($"{message} (DiceInfo={behavior.behaviourInCard.Detail}:{behavior.behaviourInCard.Min}-{behavior.behaviourInCard.Dice}, DiceScriptName={behavior.behaviourInCard.Script}, CardName={behavior.card.card.GetName()}, CardOwner={behavior.owner.faction}:{behavior.owner.index}:{behavior.owner.UnitData.unitData.name})");
+        }
 
         /// <summary>
         /// 指定したメッセージで情報レベルのログを追加します。
@@ -77,10 +91,6 @@ namespace PokeAbilities
         public void InfoWithCaller(string message)
             => Info($"[{GetCallerInfo(new StackTrace())}] {message}");
 
-        #endregion
-
-        #region Warning
-
         /// <summary>
         /// 指定したメッセージで警告レベルのログを追加します。
         /// </summary>
@@ -94,10 +104,6 @@ namespace PokeAbilities
         /// <param name="message">出力するメッセージ。</param>
         public void WarningWithCaller(string message)
             => Warning($"[{GetCallerInfo(new StackTrace())}] {message}");
-
-        #endregion
-
-        #region Error
 
         /// <summary>
         /// 指定したメッセージでエラー レベルのログを追加します。
@@ -130,8 +136,6 @@ namespace PokeAbilities
             Error($"[{GetCallerInfo(new StackTrace())}] Exception thrown.");
             Error(ex);
         }
-
-        #endregion
 
         /// <summary>
         /// タイムスタンプと、指定したレベルおよびメッセージをログに追加します。
