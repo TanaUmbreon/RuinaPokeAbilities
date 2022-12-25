@@ -1,6 +1,7 @@
 ﻿#pragma warning disable IDE0051 // 使用されていないプライベート メンバーを削除する
 
 using System;
+using System.Collections.Generic;
 using HarmonyLib;
 using PokeAbilities.Resources;
 using UI;
@@ -14,6 +15,12 @@ namespace PokeAbilities.Patches
     [Harmony]
     internal static class StoryIconPatch
     {
+        /// <summary>接待 XML データのストーリー タイプに対応するアイコンのアート ワーク名を関連付けたマップ</summary>
+        private static readonly Dictionary<string, ArtWork> _storyToArtWorkMap = new Dictionary<string, ArtWork>()
+        {
+            { "PokeAbilities", ArtWork.PokemonBook },
+        };
+
         /// <summary>
         /// カスタム ストーリー アイコンを設定します。
         /// </summary>
@@ -26,9 +33,9 @@ namespace PokeAbilities.Patches
         {
             try
             {
-                if (story != StageName.PokeAbilities) { return true; }
+                if (!_storyToArtWorkMap.ContainsKey(story)) { return true; }
 
-                Sprite sprite = LoadedResources.Instance.GetArtWork(ArtWorkName.PokemonBook);
+                Sprite sprite = _storyToArtWorkMap[story].GetSprite();
                 if (sprite == null) { return true; }
 
                 __result = new UIIconManager.IconSet

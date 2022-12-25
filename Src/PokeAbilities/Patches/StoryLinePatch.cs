@@ -59,15 +59,15 @@ namespace PokeAbilities.Patches
         }
 
         /// <summary>
-        /// 新規ステージ用にストーリースロットを新規作成します。
-        /// 指定した本家のステージアイコンをコピーして、それに指定した新規ステージを設定して、指定した位置だけずらします。
+        /// 新規ステージ用にストーリー スロットを新規作成します。
+        /// 指定した本家のステージ アイコンをコピーして、それに指定した新規ステージを設定して、指定した位置だけずらします。
         /// </summary>
         /// <param name="targetStoryPanel"></param>
         /// <param name="copyFrom">コピー元のステージアイコン。</param>
-        /// <param name="newStageId">設定する新規ステージのLOR ID。</param>
-        /// <param name="slotOffsetX">コピー元からの表示位置のオフセット。(X方向)</param>
-        /// <param name="slotOffsetY">コピー元からの表示位置のオフセット。(Y方向)</param>
-        private static void CreateStorySlot(UIStoryProgressPanel targetStoryPanel, UIStoryLine copyFrom, LorId newStageId, float slotOffsetX = 0f, float slotOffsetY = 0f)
+        /// <param name="newStageId">設定する新規ステージの LOR ID。</param>
+        /// <param name="slotOffsetX">コピー元からの表示位置のオフセット。(X 方向)</param>
+        /// <param name="slotOffsetY">コピー元からの表示位置のオフセット。(Y 方向)</param>
+        private static void CreateStorySlot(UIStoryProgressPanel targetStoryPanel, UIStoryLine copyFrom, StageId newStageId, float slotOffsetX = 0f, float slotOffsetY = 0f)
         {
             // 指定したステージアイコンスロットをコピー元(表示位置の起点)として取得する
             List<UIStoryProgressIconSlot> iconList = targetStoryPanel.iconList;
@@ -79,7 +79,7 @@ namespace PokeAbilities.Patches
             }
 
             // 使用する新規ステージ情報を取得する
-            StageClassInfo stageInfo = Singleton<StageClassInfoList>.Instance.GetData(newStageId);
+            StageClassInfo stageInfo = newStageId.GetStageClassInfo();
             if (stageInfo == null)
             {
                 Log.Instance.WarningWithCaller($"Could not create new story slot. Because 'newStageId' could not be found. (newStageId: \"{newStageId}\")");

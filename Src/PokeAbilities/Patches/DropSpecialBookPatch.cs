@@ -21,9 +21,8 @@ namespace PokeAbilities.Patches
             {
                 if (IsClear(StageId.TheCarnival) && !HasPokeAbilitiesBook())
                 {
-                    DropBookInventoryModel.Instance.AddBook(BookId.PokeAbilities, 1);
-                    string bookName = DropBookXmlList.Instance.GetData(BookId.PokeAbilities).Name;
-                    Tools.SetAlarmText(ExtraTextId.PopupGetStoryBook, args: bookName);
+                    OwnDropBookModel book = DropBookInventoryModel.Instance.AddBook(BookId.PokeAbilities, 1);
+                    Tools.SetAlarmText(ExtraText.PopupGetStoryBook.Id, args: book.XmlInfo.Name);
                 }
             }
             catch (Exception ex)
