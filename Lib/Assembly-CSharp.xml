@@ -5312,13 +5312,13 @@
       <summary>混乱ダメージの増減量</summary>
     </member>
     <member name="F:DiceStatBonus.breakRate">
-      <summary>混乱ダメージの増減量 (% 単位)</summary>
+      <summary>混乱ダメージの増減率 (% 単位)</summary>
     </member>
     <member name="F:DiceStatBonus.dmg">
       <summary>ダメージの増減量</summary>
     </member>
     <member name="F:DiceStatBonus.dmgRate">
-      <summary>ダメージの増減量 (% 単位)</summary>
+      <summary>ダメージの増減率 (% 単位)</summary>
     </member>
     <member name="F:DiceStatBonus.face">
       <summary></summary>
@@ -7185,6 +7185,98 @@
     </member>
     <member name="P:Singleton`1.Instance">
       <summary>このクラスの唯一のインスタンスを取得します。</summary>
+    </member>
+    <member name="T:StageClassInfo">
+      <summary>接待 XML データを格納します。</summary>
+    </member>
+    <member name="F:StageClassInfo._id">
+      <summary>接待数値 ID</summary>
+    </member>
+    <member name="F:StageClassInfo._rewardList">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo._storyType">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.chapter">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.exceptFloorList">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.extraCondition">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.floorNum">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.floorOnlyList">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.invitationInfo">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.isChapterLast">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.isStageFixedNormal">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.mapInfo">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.rewardList">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.stageName">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.stageType">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.storyList">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.waveList">
+      <summary></summary>
+    </member>
+    <member name="F:StageClassInfo.workshopID">
+      <summary></summary>
+    </member>
+    <member name="M:StageClassInfo.#ctor">
+      <summary></summary>
+    </member>
+    <member name="M:StageClassInfo.GetEndStory">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:StageClassInfo.GetPrevBattleStory">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:StageClassInfo.GetStartStory">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="M:StageClassInfo.InitializeIds(System.String)">
+      <summary></summary>
+      <param name="defaultPid"></param>
+    </member>
+    <member name="M:StageClassInfo.IsNormalInvitation">
+      <summary></summary>
+      <returns></returns>
+    </member>
+    <member name="P:StageClassInfo.currentState">
+      <summary></summary>
+    </member>
+    <member name="P:StageClassInfo.id">
+      <summary>接待 LOR ID を取得します。</summary>
+    </member>
+    <member name="P:StageClassInfo.IsNamedStage">
+      <summary></summary>
+    </member>
+    <member name="P:StageClassInfo.storyType">
+      <summary></summary>
     </member>
     <member name="T:StageClassInfoList">
       <summary>接待 XML データを格納するリストです。</summary>
