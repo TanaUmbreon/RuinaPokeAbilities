@@ -12,8 +12,6 @@ namespace PokeAbilities.Types
         /// </summary>
         public abstract PokeType Type { get; }
 
-        public sealed override string[] Keywords => base.Keywords;
-
         public override void OnAddToHand(BattleUnitModel owner)
         {
             try

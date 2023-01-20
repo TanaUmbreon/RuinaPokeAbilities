@@ -83,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Resources\Keyword.cs" />
+    <Compile Include="Resources\KeywordId.cs" />
     <Compile Include="IRandomizer.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Patches\DropSpecialBookPatch.cs" />
@@ -138,6 +138,10 @@
     <Compile Include="Types\TypeUnitBufs\BattleUnitBuf_FireType.cs" />
     <Compile Include="Types\TypeUnitBufs\BattleUnitBuf_WaterType.cs" />
     <Compile Include="Types\UnitTypes.cs" />
+    <Compile Include="Weathers\BattleUnitBufWeatherBase.cs" />
+    <Compile Include="Weathers\BattleUnitBuf_Rain.cs" />
+    <Compile Include="Weathers\DiceCardSelfAbilityWeatherBase.cs" />
+    <Compile Include="Weathers\DiceCardSelfAbility_water_rain5all.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
